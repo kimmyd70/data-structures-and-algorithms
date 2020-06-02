@@ -15,7 +15,7 @@ const greeting = (word) => {
 
 const speaker = (message, callback) => {
   // Solution code here...
-  return callback (message);x
+  return callback (message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,10 +36,15 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (var i = 0; i < times; i++){
+    arr.push(num);
+  }
+  return callback (arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
