@@ -42,9 +42,9 @@ const addValues = (arr, value) => {
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
   for (var i = 0; i < times; i++){
-    arr.push(num);
+    callback(arr, num);
   }
-  return callback (arr);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +66,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let availableArr =[];
+  availableItems.array.forEach(element => {
+    if (availableItems.available){
+      availableArr.push(element);
+    }
+  });
+  return (availableArr);
 };
 
 /* ------------------------------------------------------------------------------------------------
