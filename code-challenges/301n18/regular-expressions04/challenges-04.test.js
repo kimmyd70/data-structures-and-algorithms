@@ -24,6 +24,7 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
+  $('form').append('button').text('submit');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +41,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let validator = /[0-9]/g;
+  validator.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
