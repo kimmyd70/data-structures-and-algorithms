@@ -9,7 +9,7 @@ CHALLENGE 1 - Review
 Write a function named changeAllClassNames that uses jQuery to select all each li and add a class of "fruit";
 
 ------------------------------------------------------------------------------------------------ */
-const $ = createSnippetWithJQuery(`
+let $ = createSnippetWithJQuery(`
 <ul id="fruits">
   <li class="apple">Apple</li>
   <li class="orange">Orange</li>
@@ -20,19 +20,18 @@ const $ = createSnippetWithJQuery(`
 const changeAllClassNames = () => {
   // Solution code here...
   $('li').addClass('fruit');
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
-
 const sortBackwards = (arr) => {
-  // Solution code here...
-  arr.sort = (a,b) => {
-    return a < b;
-  };
+// Solution code here...
+  arr.sort(function(a,b) {
+    return a - b;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +45,10 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
+  arr.sort((a,b) => {
+    return a - b;
+  });
+
   // Solution code here...
 };
 
@@ -181,7 +184,7 @@ CHALLENGE 12 - Stretch Goal
 
 Without altering the html, write a function named addPearClass that uses jQuery to add a class of "pear" to the third li.
 ------------------------------------------------------------------------------------------------ */
-const $ = createSnippetWithJQuery(`
+$ = createSnippetWithJQuery(`
 <ul id="fruits">
   <li class="apple">Apple</li>
   <li class="orange">Orange</li>
@@ -191,7 +194,7 @@ const $ = createSnippetWithJQuery(`
 
 const addPearClass = () => {
   // Solution code here...
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -209,8 +212,8 @@ describe('Testing challenge 1', () => {
 
     expect($('li.apple').hasClass('fruit')).toBe(true);
     expect($('li.orange').hasClass('fruit')).toBe(true);
-  })
-})
+  });
+});
 
 describe('Testing challenge 2', () => {
   test('It should sort high-to-low the numbers in an array', () => {
