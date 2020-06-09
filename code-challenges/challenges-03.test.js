@@ -31,8 +31,16 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 const sortBackwards = (arr) => {
   // Solution code here...
   arr.sort(function(a,b) {
-    return a - b;
+    if (a < b) {
+      return 1;
+    }
+    if (a > b) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------

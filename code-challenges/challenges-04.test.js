@@ -42,7 +42,7 @@ For example:
 const isNum = (input) => {
   // Solution code here...
   let validator = /[0-9]/g;
-  validator.test(input);
+  return validator.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ describe('Testing challenge 1', () => {
   test('It should add a submit button to the DOM', () => {
     generateSubmitButton();
     expect($('button').text()).toStrictEqual('submit');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
