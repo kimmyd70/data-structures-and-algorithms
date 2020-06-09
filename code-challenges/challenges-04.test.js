@@ -55,7 +55,19 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let validator = /([A-Z]\w+)/g;
+  let nullArr = [];
+  let result = str.match(validator);
+  if (result === null){
+    return nullArr;
+  }
+  else {
+    return result;
+
+  }
+
 };
+// CLOSE--returns correctly on Repl
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
