@@ -69,8 +69,16 @@ let $ = createSnippetWithJQuery(`
 </script>
 `);
 
-const templatingWithMustache = () => {
+const templatingWithMustache = (arr) => {
   // Solution code here...
+  let markupArr = [];
+  let keyArr = Object.keys (arr);
+  for (var i = 0; i < keyArr.length; i++){
+    let key = keyArr[i];
+    markupArr.push(`{{${key}}}`);
+  }
+  return markupArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +107,10 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (var i = 0; i < arr.length; i++){
+    let home = arr[i].house;
+    houses.push(home);
+  }
   return houses;
 };
 
@@ -116,7 +128,18 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let person = character;
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].name === person){
+      let parent = person.children;
+      if (parent === []){
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
