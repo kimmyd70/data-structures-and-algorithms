@@ -38,7 +38,9 @@ let $ = createSnippetWithJQuery(`
 
 const templateWithJQuery = () => {
   // Solution code here...
-}
+  let yellow = 3;
+  return yellow;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -242,7 +244,7 @@ describe('Testing challenge 1', () => {
     expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
     expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
     expect($('section:nth-child(4) p').text()).toStrictEqual('red');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
