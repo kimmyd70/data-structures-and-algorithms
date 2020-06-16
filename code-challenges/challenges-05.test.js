@@ -37,9 +37,16 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  // Solution code here...
-  let yellow = 3;
-  return yellow;
+  starWarsPeople.forEach(person => {
+    let $object = $(`<section>${$('#template').html()}</section>`);
+    let name = person.name;
+    let height = person.height;
+    let eyeColor = person.eye_color;
+    $object.find('h2').text(name);
+    $object.find('h3').text(height);
+    $object.find('p').text(eyeColor);
+    $('main').append($object);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
