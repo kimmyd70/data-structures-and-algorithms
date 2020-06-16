@@ -69,8 +69,16 @@ let $ = createSnippetWithJQuery(`
 </script>
 `);
 
-const templatingWithMustache = () => {
+const templatingWithMustache = (arr) => {
   // Solution code here...
+  let markupArr = [];
+  let keyArr = Object.keys (arr);
+  for (var i = 0; i < keyArr.length; i++){
+    let key = keyArr[i];
+    markupArr.push(`{{${key}}}`);
+  }
+  return markupArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -210,7 +218,7 @@ Run your tests from the console: jest challenges-06.test.js
 describe('Testing challenge 1', () => {
   test('It should return html markup with the character', () => {
     const filledTemplates = templatingWithMustache();
-     const $ = cheerio.load(filledTemplates[0]);
+    const $ = cheerio.load(filledTemplates[0]);
     expect($('h2').text()).toStrictEqual('Eddard');
   });
 });
