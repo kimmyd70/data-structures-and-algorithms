@@ -133,15 +133,15 @@ const listFoods = (recipe) => {
   // Solution code here...
   let list = Object.values(recipe.ingredients);
   let ingredient = '';
-  console.log('list', list);
+  // console.log('list', list);
   for (var i = 0; i < list.length; i++) {
     let fullIngredient = list[i];
-    console.log('fI', fullIngredient, fullIngredient.length);
+    // console.log('fI', fullIngredient, fullIngredient.length);
     for (var j = 0; j < fullIngredient.length; j++) {
       if (fullIngredient[j] !== '') { //this condition is never true----why???
         ingredient = fullIngredient.slice(-1 * j);
-        console.log(ingredient);
-        console.log('j', j);
+        // console.log(ingredient);
+        // console.log('j', j);
       }
     }
 
