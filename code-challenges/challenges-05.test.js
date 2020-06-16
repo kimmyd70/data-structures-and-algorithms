@@ -64,7 +64,12 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
+  let i = 0;
   // Solution code here...
+  while(i <= str.length){
+    result.push(str.slice(i));
+    i++;
+  }
   return result;
 };
 
