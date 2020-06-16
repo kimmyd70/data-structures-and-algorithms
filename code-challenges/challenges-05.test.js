@@ -131,11 +131,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  let list = recipe.ingredients;
+  let list = Object.values(recipe.ingredients);
   for (var i = 0; i <= list.length; i++){
     result.push(list[i].slice(-1));
   }
-
+  console.log(list);
   return result;
 };
 
