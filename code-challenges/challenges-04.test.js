@@ -42,7 +42,7 @@ For example:
 const isNum = (input) => {
   // Solution code here...
   let validator = /[0-9]/g;
-  validator.test(input);
+  return validator.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +55,19 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let validator = /([A-Z]\w+)/g;
+  let nullArr = [];
+  let result = str.match(validator);
+  if (result === null){
+    return nullArr;
+  }
+  else {
+    return result;
+
+  }
+
 };
+// CLOSE--returns correctly on Repl
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -143,7 +155,7 @@ describe('Testing challenge 1', () => {
   test('It should add a submit button to the DOM', () => {
     generateSubmitButton();
     expect($('button').text()).toStrictEqual('submit');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
