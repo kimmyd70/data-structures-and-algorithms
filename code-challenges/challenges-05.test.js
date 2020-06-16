@@ -66,7 +66,7 @@ const howMuchPencil = (str) => {
   let result = [];
   let i = 0;
   // Solution code here...
-  while(i <= str.length){
+  while (i <= str.length) {
     result.push(str.slice(i));
     i++;
   }
@@ -132,10 +132,21 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   let list = Object.values(recipe.ingredients);
-  for (var i = 0; i <= list.length; i++){
-    result.push(list[i].slice(-1));
+  let ingredient = '';
+  console.log('list', list);
+  for (var i = 0; i < list.length; i++) {
+    let fullIngredient = list[i];
+    console.log('fI', fullIngredient, fullIngredient.length);
+    for (var j = 0; j < fullIngredient.length; j++) {
+      if (fullIngredient[j] !== '') {
+        ingredient = fullIngredient.slice(-1 * j);
+        console.log(ingredient);
+        console.log('j', j);
+      }
+    }
+
+    result.push(ingredient);
   }
-  console.log(list);
   return result;
 };
 
@@ -358,6 +369,6 @@ describe('Testing challenge 11', () => {
 });
 
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 };
