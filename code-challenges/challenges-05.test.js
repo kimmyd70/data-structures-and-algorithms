@@ -138,7 +138,7 @@ const listFoods = (recipe) => {
     let fullIngredient = list[i];
     console.log('fI', fullIngredient, fullIngredient.length);
     for (var j = 0; j < fullIngredient.length; j++) {
-      if (fullIngredient[j] !== '') {
+      if (fullIngredient[j] !== '') { //this condition is never true----why???
         ingredient = fullIngredient.slice(-1 * j);
         console.log(ingredient);
         console.log('j', j);
@@ -147,7 +147,7 @@ const listFoods = (recipe) => {
 
     result.push(ingredient);
   }
-  return result;
+  return result; //returns array of full ingredients minus first character
 };
 
 /* ------------------------------------------------------------------------------------------------
