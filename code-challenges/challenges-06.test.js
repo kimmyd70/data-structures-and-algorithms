@@ -120,7 +120,18 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let person = character;
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].name === person){
+      let parent = person.children;
+      if (parent === []){
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -199,7 +210,7 @@ Run your tests from the console: jest challenges-06.test.js
 describe('Testing challenge 1', () => {
   test('It should return html markup with the character', () => {
     const filledTemplates = templatingWithMustache();
-    const $ = cheerio.load(filledTemplates[0]);
+     const $ = cheerio.load(filledTemplates[0]);
     expect($('h2').text()).toStrictEqual('Eddard');
   });
 });
