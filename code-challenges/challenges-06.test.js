@@ -99,6 +99,10 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (var i = 0; i < arr.length; i++){
+    let home = arr[i].house;
+    houses.push(home);
+  }
   return houses;
 };
 
