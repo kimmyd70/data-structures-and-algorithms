@@ -55,6 +55,17 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr.sort(function(a,b) {
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  return arr;
 
 };
 
@@ -66,6 +77,18 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort(function(a,b) {
+    if (a.length > b.length) {
+      return 1;
+    }
+    if (a.length < b.length) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
