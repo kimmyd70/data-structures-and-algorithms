@@ -67,7 +67,6 @@ const isCapitalized = (str) => {
   }
 
 };
-// CLOSE--returns correctly on Repl
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -77,6 +76,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let validator = /([A-Z]\w+)/g;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
