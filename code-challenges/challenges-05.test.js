@@ -127,28 +127,21 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   let list = Object.values(recipe.ingredients);
   let ingredient = '';
-  // console.log('list', list);
   for (var i = 0; i < list.length; i++) {
-    let fullIngredient = list[i];
-    // console.log('fI', fullIngredient, fullIngredient.length);
-    for (var j = 0; j < fullIngredient.length; j++) {
-      if (fullIngredient[j] !== '') { //this condition is never true----why???
-        ingredient = fullIngredient.slice(-1 * j);
-        // console.log(ingredient);
-        // console.log('j', j);
-      }
-    }
-
+    let end = list[i].length;
+    let start = list[i].indexOf(' ', 6);
+    ingredient = list[i].slice(start + 1,end);
     result.push(ingredient);
   }
-  return result; //returns array of full ingredients minus first character
+  return result; //returns array of last two words
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
