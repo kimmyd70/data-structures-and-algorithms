@@ -24,7 +24,11 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-  $('form').append('button').text('submit');
+  // let button = document.createElement('input');
+  // button.setAttribute('type', 'submit');
+
+  // $('form').append('button').text('submit');
+  $('form').append('<br><input type="submit" id="submitButton" value="submit" />');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,8 +80,18 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let validator = /([A-Z]\w+)/g;
+  let citiesArr = [];
+  for (var i = 0; i < arr.length; i++){
+    let validator = /('[A-J]\w+)\A/;
+    console.log(arr[i]);
+    let result = arr[i].match(validator);
+    console.log(result);
+    if (result !== null){
+      citiesArr.push(result.input);
+    }
+  }
 
+  return citiesArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -256,4 +270,4 @@ describe('Testing challenge 8', () => {
 
 function createSnippetWithJQuery(html){
   return cheerio.load(html);
-};
+}
