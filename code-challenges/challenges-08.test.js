@@ -53,6 +53,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let resultArr = arr.filter(element => element.match(/[aeiouAEIOU]/g));
+  return resultArr;
 };
 
 
