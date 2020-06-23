@@ -24,12 +24,9 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-  let button = document.createElement('input');
-  button.setAttribute('type', 'submit');
+  $('form').insertAfter('<input type="submit" value="submit"></input>');
 
-  $('form').append('button').text('submit');
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
