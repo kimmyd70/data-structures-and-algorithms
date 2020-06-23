@@ -24,11 +24,10 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-  // let button = document.createElement('input');
-  // button.setAttribute('type', 'submit');
+  let button = document.createElement('input');
+  button.setAttribute('type', 'submit');
 
-  // $('form').append('button').text('submit');
-  $('form').append('<br><input type="submit" id="submitButton" value="submit" />');
+  $('form').append('button').text('submit');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,12 +81,11 @@ const citiesAtoJ = (arr) => {
   // Solution code here...
   let citiesArr = [];
   for (var i = 0; i < arr.length; i++){
-    let validator = /('[A-J]\w+)\A/;
-    console.log(arr[i]);
-    let result = arr[i].match(validator);
-    console.log(result);
-    if (result !== null){
-      citiesArr.push(result.input);
+    let validator = /([A-J]\w+)/g;
+    if(arr[i].match(validator)){
+      if (/\s/g.test(arr[i]) === false){
+        citiesArr.push(arr[i]);
+      }
     }
   }
 
