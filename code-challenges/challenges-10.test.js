@@ -25,11 +25,19 @@ Note: You might need to use the same method more than once.
 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
-
+// this works (but...)
 const count = (target, input) => {
   // Solution code here...
+  let counter = 0;
+  for(let i = 0; i < input.length; i++){
+    for(let j = 0; j < input[i].length; j++){
+      if (input[i][j] === target){
+        counter ++;
+      }
+    }
+  }
+  return counter;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -40,8 +48,16 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
+//this works (not elegant, but...)
+
+let sum = 0;
 const totalSum = (input) => {
-  // Solution code here...
+  for(let i = 0; i < input.length; i++){
+    for(let j = 0; j < input[i].length; j++){
+      sum = input[i][j] + sum;
+    }
+  }
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +73,23 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  // remove elements
+  if (input !== []){
+    for(let i = 0; i < input.length; i++){
+      for(let j = 0; j < input[i].length; j++){
+        if ((input[i][j] === null) || (input[i][j] %5 !== 0)) {
+          input.pop(input[i][j]);
+        }
+      }
+    }
+    //raise new array to power of 2
+    for(let i = 0; i < input.length; i++){
+      for(let j = 0; j < input[i].length; j++){
+        input = Math.pow(input[i][j]);
+      }
+    }
+  }
+  return input;
 };
 
 /* ------------------------------------------------------------------------------------------------
