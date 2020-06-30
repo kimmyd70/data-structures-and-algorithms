@@ -181,7 +181,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  const reducer = (accumulator, currentValue) => accumulator + arr.indexOf(element);
+  const reducer = (element, accumulator) => accumulator = arr.indexOf(element);
   return (arr.reduce(reducer, 0));
 };
 
@@ -242,9 +242,12 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+// const returnNames = (arr) => {
+//   // Solution code here...
+//   let names = starWarsData.reduce(accumulator,value,index){
+//     arr.push
+//   }
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -256,6 +259,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let arr = str.split('');
+  let reversed = arr.reduce((newSTR, letter) =>{
+    return letter + newSTR;
+
+  }, '');
+  return(reversed);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -309,6 +318,10 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let numKids = arr.reduce ((kids, char, idx) =>{
+    kids[char.children];
+    return kids.length;
+  },{});
 };
 
 /* ------------------------------------------------------------------------------------------------
