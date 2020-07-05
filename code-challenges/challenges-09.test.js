@@ -242,12 +242,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-// const returnNames = (arr) => {
-//   // Solution code here...
-//   let names = starWarsData.reduce(accumulator,value,index){
-//     arr.push
-//   }
-// };
+const returnNames = (arr) => {
+  // Solution code here...
+  let names = arr.reduce((accumulator,char,index) =>{
+    accumulator = [char.name];
+    return accumulator;
+  }, []);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -316,13 +317,13 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-  let numKids = arr.reduce ((kids, char, idx) =>{
-    kids[char.children];
-    return kids.length;
-  },{});
-};
+// const countNumberOfChildren = (arr) => {
+//   // Solution code here...
+//   let numKids = arr.reduce ((kids, char, idx) =>{
+//     kids[char.children];
+//     return kids.length;
+//   },{});
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
