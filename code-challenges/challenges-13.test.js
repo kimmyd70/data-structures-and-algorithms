@@ -20,6 +20,7 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
+  $('.pear.text').replaceWith('Pear');
 // Solution code here...
 };
 
@@ -31,9 +32,25 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
+// const firstLetters = (arr) => {
+//   // Solution code here...
+//   let newArr = [];
+//   for(var i = 0; i <arr.length; i++) {
+//     let letter = arr[i].substring(0,1);
+//     newArr.push(letter);
+//   }
+//   return newArr;
+// };
+
 const firstLetters = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(item => {
+    newArr.push(item.substring(0,1));
+  });
+  return newArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
