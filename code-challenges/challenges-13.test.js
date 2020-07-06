@@ -20,7 +20,7 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-  $('li.eq(2)').text().replaceWith('Pear');
+  $('li.eq(2)'.text()).replaceWith('Pear');
 // Solution code here...
 };
 

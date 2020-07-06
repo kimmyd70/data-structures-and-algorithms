@@ -37,8 +37,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.map(function(item) {
+    newArr.push(item.replace(item[0], item[0].toUpperCase()));
+  });
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -111,7 +115,16 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
+  let bigString = '';
   // Solution code here...
+  arr.map(item => {
+    if (item.mass > 77){
+      bigString +=`${item.name} - `;
+    }
+  });
+  let end = bigString.length - 3;
+
+  return bigString.substring(0,end);
 };
 
 /* ------------------------------------------------------------------------------------------------
