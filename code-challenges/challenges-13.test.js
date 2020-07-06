@@ -20,9 +20,11 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-  $('.pear.text').replaceWith('Pear');
+  $('li.eq(2)').text().replaceWith('Pear');
 // Solution code here...
 };
+
+// $('#p1').on('click', function(event){ $(this).text('bye'); }); 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
