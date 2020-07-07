@@ -249,13 +249,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
+const returnNames = (arr => {
   // Solution code here...
-  let names = arr.reduce((accumulator,char,index) =>{
-    accumulator = [char.name];
-    return accumulator;
+  return arr.reduce((nameArr, item) => {
+    nameArr.push(item.name);
+    return nameArr;
   }, []);
-};
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
