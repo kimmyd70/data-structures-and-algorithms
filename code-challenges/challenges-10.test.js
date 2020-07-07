@@ -8,10 +8,28 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
+  const express = require('express');
+  const app = express();
+
+  const bio = 'I am a 301 student at Code Fellows--Seattle';
+  const foods = 'My favorite foods include: anything Italian, anything Mexican, anything Thai, anything except Lima Beans';
+
+  app.get('/hello', function(req,res){
+    res.send('Hello There');
+  });
+
+  app.get('/aboutme', function(req,res){
+    res.send(bio);
+  });
+
+  app.get('/favoritefoods', function(req,res){
+    res.send(foods);
+  });
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
+
   });
   return server;
 };
