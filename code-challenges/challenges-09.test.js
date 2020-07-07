@@ -1,5 +1,7 @@
 'use strict';
 
+const { response, request } = require('express');
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -26,6 +28,7 @@ const createServer = () => {
   const app = express();
 
   // Routes go here
+  app.get('/events', getCurrentEvents);
   // Solution code here...
 
   var server = app.listen(3301, function () {
@@ -34,6 +37,7 @@ const createServer = () => {
   });
   return server;
 };
+
 
 const currentEvents = {
   news: [
@@ -157,18 +161,30 @@ const currentEvents = {
       url: "https://bgr.com/2020/04/13/coronavirus-mask-effectiveness-surgical-how-to/"
     }
   ]
-}
+};
 
 function getCurrentEvents(request, response) {
   // Solution code here...
+  let data = require('currentEvents');
+  let actualData = new Event(data.body.news);
+  response.status(200).json(actualData);
+
 }
 
 const mapCurrentEvents = () => {
   // Solution code here...
-}
+  let newArr = currentEvents.news.map(item => new Event(item));
+  return newArr;
+};
 
 function Event(obj) {
   // Solution code here...
+  this.author = obj.author;
+  this.categories = obj.category;
+  this.summary = obj.description;
+  this.img_url = obj.image;
+  this.date = obj.published.slice(0-9);
+  this.title = obj.title;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -178,12 +194,19 @@ Write a function named countNumberOfElements that, given an array as input, uses
 
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
+let length = 0;
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  const reducer = (element, accumulator) => accumulator = arr.indexOf(element);
-  return (arr.reduce(reducer, 0));
+  arr.reduce(getLength, 0);
+
+  return length;
 };
+
+function getLength(){
+  length++;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -242,13 +265,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
+const returnNames = (arr => {
   // Solution code here...
-  let names = arr.reduce((accumulator,char,index) =>{
-    accumulator = [char.name];
-    return accumulator;
+  return arr.reduce((nameArr, item) => {
+    nameArr.push(item.name);
+    return nameArr;
   }, []);
-};
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
