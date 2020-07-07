@@ -140,9 +140,15 @@ Here is an example of the input:
 
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
-
+//NOT READING PROPERTY (a.property = undefined)
 const sortBy = (property, arr) => {
-  // Solution code here...
+	// Solution code here..
+  let value = property.value;
+  arr.sort(function compare(a,b) {
+    a.value - b.value;
+    console.log(a.value, b.value);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
