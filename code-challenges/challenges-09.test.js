@@ -178,12 +178,19 @@ Write a function named countNumberOfElements that, given an array as input, uses
 
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
+let length = 0;
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  const reducer = (element, accumulator) => accumulator = arr.indexOf(element);
-  return (arr.reduce(reducer, 0));
+  arr.reduce(getLength, 0);
+
+  return length;
 };
+
+function getLength(){
+  length++;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
