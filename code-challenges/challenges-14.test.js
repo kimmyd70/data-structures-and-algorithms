@@ -37,8 +37,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.map(function(item) {
+    newArr.push(item.replace(item[0], item[0].toUpperCase()));
+  });
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -111,7 +115,16 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
+  let bigString = '';
   // Solution code here...
+  arr.map(item => {
+    if (item.mass > 77){
+      bigString +=`${item.name} - `;
+    }
+  });
+  let end = bigString.length - 3;
+
+  return bigString.substring(0,end);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,9 +140,15 @@ Here is an example of the input:
 
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
-
+//NOT READING PROPERTY (a.property = undefined)
 const sortBy = (property, arr) => {
-  // Solution code here...
+	// Solution code here..
+  let value = property.value;
+  arr.sort(function compare(a,b) {
+    a.value - b.value;
+    console.log(a.value, b.value);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
