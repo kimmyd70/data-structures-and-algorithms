@@ -10,7 +10,13 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  let max = arr.reduce(function(a,b) {
+    return Math.max(a,b);
+  });
+  return max;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -36,7 +42,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+//   let soldArray = [];
+//   let sum = 0;
+//   for (var j = 0; j < 12; j++){
+//     for (var i = 0; i < stores.length; i++){
+//       sum = stores[i][j];
+//     }
+//     soldArray.push(sum);
+//   }
+//   return soldArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +90,8 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+//   let numTreats = arr[3[2[]]].items.name.value;
+//   return numTreats;
 };
 
 /* ------------------------------------------------------------------------------------------------

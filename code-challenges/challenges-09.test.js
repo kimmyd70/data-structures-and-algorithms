@@ -165,6 +165,7 @@ const currentEvents = {
 
 function getCurrentEvents(request, response) {
   // Solution code here...
+
   let actualData = currentEvents.news.map( item => new Event(item));
   response.status(200).json(actualData);
 
