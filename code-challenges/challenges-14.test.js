@@ -141,15 +141,22 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 //NOT READING PROPERTY (a.property = undefined)
-const sortBy = (property, arr) => {
-	// Solution code here..
-  let value = property.value;
-  arr.sort(function compare(a,b) {
-    a.value - b.value;
-    console.log(a.value, b.value);
-  });
-  return arr;
-};
+// const sortBy = (property, arr) => {
+// 	// Solution code here..
+//   let value = property.value;
+//   arr.sort(function compare(a,b) {
+//     a.value - b.value;
+//     console.log(a.value, b.value);
+//   });
+//   return arr;
+// };
+
+// const sortBy = (property, arr) => {
+//   let sortedArr = arr.sort( function(a, b) {
+//     return a.property - b.property;
+//   });
+//   return sortedArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -165,6 +172,13 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  if ((url.slice(0,8)==='https://')){
+    return true;
+  }
+
+  else{
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
