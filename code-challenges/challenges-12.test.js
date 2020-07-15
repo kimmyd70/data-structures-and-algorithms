@@ -64,24 +64,24 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
+
+///////////////////////////////Looks fine on Repl but jest says 'serializes to the same string' and fails
+
+
 const newArr = [];
 
 const salesData = (hours, data) => {
   hours.forEach ((hour,index) => {
     const sales = data[index];
-    new Object(hour, sales);
+    new Object(sales, hour);
   });
   return newArr;
 };
 
-// n.forEach((num1, index) => {
-//   const num2 = m[index];
-//   console.log(num1, num2);
-// });
 
-function Object (time, data){
-  this.time = time;
+function Object (data, time){
   this.sales = `${data} cookies`;
+  this.time = time;
 
   newArr.push(this);
 }
@@ -108,10 +108,11 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
-//   let numTreats = arr[3[2[]]].items.name.value;
-//   return numTreats;
+  return((arr[2].items)[1].quantity);
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
