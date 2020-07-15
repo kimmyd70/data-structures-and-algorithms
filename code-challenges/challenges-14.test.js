@@ -143,7 +143,6 @@ This data could be sorted by name or price.
 //NOT READING PROPERTY (a.property = undefined)
 // const sortBy = (property, arr) => {
 // 	// Solution code here..
-//   let value = property.value;
 //   arr.sort(function compare(a,b) {
 //     a.value - b.value;
 //     console.log(a.value, b.value);
@@ -151,12 +150,19 @@ This data could be sorted by name or price.
 //   return arr;
 // };
 
-// const sortBy = (property, arr) => {
-//   let sortedArr = arr.sort( function(a, b) {
-//     return a.property - b.property;
-//   });
-//   return sortedArr;
-// };
+const sortBy = (property, arr) => {
+  let sortedArr = arr.sort( function(a, b) {
+    if (a[property] < b[property]) {
+      return -1;
+    }
+    if (a[property] > b[property]) {
+      return 1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  return sortedArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
