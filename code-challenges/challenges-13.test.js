@@ -20,9 +20,11 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-  $('li.eq(2)'.text()).replaceWith('Pear');
-// Solution code here...
+  return $('.pear').text('Pear');
+
 };
+
+// temp.replace(/'/g, "''"));
 
 // $('#p1').on('click', function(event){ $(this).text('bye'); }); 
 
@@ -64,7 +66,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let happyArr = arr.filter(value => value.includes(':)'));
+  return happyArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -76,7 +82,14 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let resArr = arr.map(phone =>{
+    let num = phone.replace('(','').replace(')','').replace(' ','').replace('-','');
+    return num;
+  });
+  return resArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
