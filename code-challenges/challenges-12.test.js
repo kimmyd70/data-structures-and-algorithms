@@ -68,23 +68,20 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ///////////////////////////////Looks fine on Repl but jest says 'serializes to the same string' and fails
 
 
-const newArr = [];
+
+
 
 const salesData = (hours, data) => {
-  hours.forEach ((hour,index) => {
-    const sales = data[index];
-    new Object(sales, hour);
+  let newArr =[];
+  hours.forEach((hour,index) => {
+    let storeObj = {
+      sales: `${data[index]} cookies`,
+      time : hour,
+    };
+    newArr.push(storeObj);
   });
   return newArr;
 };
-
-
-function Object (data, time){
-  this.sales = `${data} cookies`;
-  this.time = time;
-
-  newArr.push(this);
-}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
