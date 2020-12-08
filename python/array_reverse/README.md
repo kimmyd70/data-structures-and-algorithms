@@ -33,3 +33,4 @@ Our whiteboarding session, using Remo's built-in whiteboard:
 
 ![Whiteboard reverse array](./assets/array-reverse-whiteboard.png)
 
+NOTE:  I am not fond of Remo's whiteboard interface and will be exploring other alternatives
