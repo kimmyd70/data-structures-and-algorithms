@@ -1,8 +1,16 @@
 # Data Structures and Algorithms
 
 ## Language: `Python`
+_____________________
+## Table of Contents--401 Challenges
+_____________________
+[Challenge 01: Array Reverse](./python/code_challenges/array_reverse)
 
-### Folder and Challenge Setup
+[Challenge 02: Array Shift](./python/code_challenges/array_shift)
+_________________________
+
+### Folder and Challenge Setup instructions from CF
+
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
 
