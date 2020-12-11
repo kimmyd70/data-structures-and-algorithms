@@ -1,7 +1,7 @@
 # Shift an Array
 This is code challenge 01 of 401-Python (seattle-py-401n2)
 
-Developers: Kim Damalas 
+Developers: Kim Damalas with Nick Dorkins  
 
 Date: 10 December 2020
 ____________________
@@ -20,33 +20,23 @@ ___________
 
 ## Solution
 
-First we checked for the edge case of an empty array with `if statements` 
+1. Find the length of the array
 
-In the case of an array of odd length, we chose the middle as the index closer to the front and added one to insert the new value:
+2. Next, we calculated the middle of the array by dividing length by 2, and inserting the new value 
 
-Example: [2,3,4] middle is index = 1 so insertion gives [2,3,new_value,4]
+- for an odd length, we used length/2 and rounded up to the whole integer for the new value position
 
-NOTE: this approach works for a single element array.
+- we chose to mutate the original array
 
-Example: [1] becomes [1,new_value]
-
-NOTE: we chose to handle an empty array without throwing an error by simply adding the new element.
-
-Example: [] becomes [new_value]
+3. When we finished inserting the new value, we returned the amended array including the new value
 
 xxxxxxxxxxxxxx
 
-### Algorithm
+NOTE: this approach works for a single element array or a one element array.
 
-1. We first looped through the array to count the length
+Example: [1] becomes [1,new_value]
 
-2. Next, we calculated the middle of the array by dividing length by 2, adding +1, and inserting the new value 
-
-- for an odd length, we used length/2 and truncated to the whole integer then +1 for the new value position
-
-- we chose to mutate the original array 
-
-3. When we finished inserting the new value, we returned the amended array including the new value
+Example: [ ] becomes [new_value]
 _____________
 ## Testing
 
@@ -60,7 +50,7 @@ _______________
 
 ## Contributing
 
-Partner: 
+Partner: Nick Dorkins
 
 Our whiteboarding session:
 
