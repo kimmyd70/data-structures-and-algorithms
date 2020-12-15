@@ -7,6 +7,8 @@ _____________________
 [Challenge 01: Array Reverse](./python/code_challenges/array_reverse)
 
 [Challenge 02: Array Shift](./python/code_challenges/array_shift)
+
+[Challenge 03: Array Binary Search](./python/code_challenges/array_binary_search)
 _________________________
 
 ### Folder and Challenge Setup instructions from CF
