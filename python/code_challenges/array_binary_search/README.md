@@ -12,7 +12,7 @@ __________
 
 ## Approach & Efficiency
 
-Space = O(1)
+Space = O(n)
 Time = O(n)
 
 ___________
@@ -22,7 +22,7 @@ See this [Wikipedia link](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 
 ### Algorithm
 
-1. Find the length of the array and divide by 2 to get middle index (Math.ceil to get index to the right of the middle for odd number of elements
+1. Find the length of the array and divide by 2 to get middle index (Math.ceil to get index to the right of the middle for odd number of elements)
 2. set upper bound to len(list) and lower bound to 0
 
 3. Check bounds and middle == key
@@ -53,9 +53,9 @@ _______________
 
 ## Contributing
 
-Partner: 
+Partner: Mason Fryberger collab on whiteboarding session
 
 Our whiteboarding session:
 
-![Whiteboard Array-Binary-Search](./assets/array-binary-search-whiteboard.png)
+![Whiteboard Array-Binary-Search](./assets/array_binary_search_whiteboard.png)
 
