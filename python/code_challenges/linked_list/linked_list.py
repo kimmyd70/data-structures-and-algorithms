@@ -1,25 +1,35 @@
 class Node:
     """
-    Put docstring here
+    Methods instantiate a node and
+    Returns:
+        string: { a } -> { b } -> { c } -> NULL
     """
 
-    def __init__(self,value,next=None):
+    def __init__(self,value,next = None):
         # initialization here
         self.value = value
         self.next = next
         
-    def __str__():
-        #returns string "{ a } -> { b } -> { c } -> NULL"
-        pass
 
 class LinkedList:
-    """ doc """
+    """ 
+    Methods instantiate a linked list, insert a value, and
+    checks for value in the list
+    """
     
     def __init__(self, head=None):
         self.head = head
     
+    def __str__(self):
+        output = ''
+        current = self.head
+        while current is not None:
+            output += f'{{ {current.value} }} -> '
+            current = current.next
+        return output + 'NULL'
+    
     def insert(self, value):
-        node = Node(value) # value 8 next None
+        node = Node(value) 
 
         if self.head is not None:
             node.next = self.head
@@ -31,14 +41,19 @@ class LinkedList:
         while current is not None:
             if current.value == inc_value:
                 return True
-        current = current.next
+            current = current.next
         
         return False
     
 # create Linked List  
-if __name__ == "__main__":
-    new_node = Node(1)
-    new_linked = LinkedList()
-    print (new_linked)
+    def insert_many(self):
+        new_linked = []
+        current = self.head
+        for value in range(1,5):
+            self.insert(value)
+            new_linked.append(current.value)
+            current = current.next
+
+        return(new_linked)
     
-    new_linked_1 = LinkedList(new_node)
+    
