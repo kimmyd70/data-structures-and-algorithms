@@ -3,7 +3,7 @@
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/49
 This is code challenge 06 of 401-Python (seattle-py-401n2)
 
-Developers: Kim Damalas, Amber Falbo, Anthony Beaver, Audrena Vacirca, Robert Carter
+Developers: Kim Damalas  
 
 Date: 22 December 2020
 ____________________
@@ -41,7 +41,3 @@ _____________
 5. Can successfully insert after a node in the middle of the linked list
 
 6. Can successfully insert a node after the last node of the linked list
-
-_________________
-
-![Whiteboard for CC06](./images/cc06-whiteboard.png)
