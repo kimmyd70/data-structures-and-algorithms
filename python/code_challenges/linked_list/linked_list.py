@@ -117,14 +117,6 @@ class LinkedList:
         
         return new_list
 
-        # pass
-        # new_linked = []
-        # for value in range(1,5):
-            # current = self.head
-            # self.insert(value)
-            # new_linked.append(current.value)
-            # current = current.next
-        # return
 
 
 
