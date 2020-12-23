@@ -56,4 +56,10 @@ class LinkedList:
 
         return(new_linked)
     
-    
+# append(value): insert value at end of list
+
+# insert_before(value, newVal): insert newVal before 
+# first instance of value 
+
+# insert_after(value, newVal): insert newVal after
+# first instance of value 
