@@ -1,6 +1,6 @@
 # Singly Linked List
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/48
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/50
 This is code challenge 01 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas with Nick Dorkins  
