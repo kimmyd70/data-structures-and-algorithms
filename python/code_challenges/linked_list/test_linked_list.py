@@ -1,4 +1,4 @@
-from linked_list_insertions import LinkedList, Node
+from linked_list import LinkedList, Node
 import pytest
 
 def test_import():
@@ -6,13 +6,33 @@ def test_import():
     assert LinkedList
     assert Node
 
-# add a node to the end of the linked list
+# add a node to the end of the linked list -- passes
+def test_append ():
+    node = Node(0)
+    link = LinkedList(node)
+    link.insert(4)
+    link.append(10)
+    actual = str(link)
+    expected = f'{{ 4 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
+    assert actual == expected
+    
+# insert a node before a node located in the middle of a linked list -- passed
+def test_before ():
+    node = Node(0)
+    link = LinkedList(node)
+    link.insert(4)
+    link.append(10)
+    link.insert_before(0,5)
+    actual = str(link)
+    expected = f'{{ 4 }} -> {{ 5 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
+    assert actual == expected
+    
+    
+    
 # add multiple nodes to the end of a linked list
-# insert a node before a node located i the middle of a linked list
 # insert a node before the first node of a linked list
 # insert after a node in the middle of the linked list
 # insert a node after the last node of the linked list
-
 
 
 

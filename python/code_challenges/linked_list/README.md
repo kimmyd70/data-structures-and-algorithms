@@ -3,7 +3,7 @@
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/49
 This is code challenge 06 of 401-Python (seattle-py-401n2)
 
-Developers: Kim Damalas  
+Developers: Kim Damalas, Amber Falbo, Anthony Beaver, Audrena Vacirca, Robert Carter
 
 Date: 22 December 2020
 ____________________
