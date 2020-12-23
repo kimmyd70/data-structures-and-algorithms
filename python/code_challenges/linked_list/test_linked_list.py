@@ -27,16 +27,56 @@ def test_before ():
     expected = f'{{ 4 }} -> {{ 5 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
     assert actual == expected
     
+# insert a node before the first node of a linked list -- passes
+    def test_before_first ():
+        node = Node(0)
+        link = LinkedList(node)
+        link.insert(4)
+        link.append(10)
+        link.insert_before(4,5)
+        actual = str(link)
+        expected = f'{{ 5 }} -> {{ 4 }} ->  {{ 0 }} -> {{ 10 }} -> NULL'
+        assert actual == expected
+
     
+# insert a node after a node located in the middle of a linked list -- passes
+def test_after ():
+    node = Node(0)
+    link = LinkedList(node)
+    link.append(3)
+    link.append(10)
     
-# add multiple nodes to the end of a linked list
-# insert a node before the first node of a linked list
-# insert after a node in the middle of the linked list
-# insert a node after the last node of the linked list
+    link.insert_after(3,5)
+    actual = str(link)
+    expected = f'{{ 0 }} -> {{ 3 }} -> {{ 5 }} -> {{ 10 }} -> NULL'
+    assert actual == expected
+    
+# insert a node after the last node of the linked list -- passes
+###### how is this not the same as testing the .append function? ######
+def test_after_last ():
+    node = Node(0)
+    link = LinkedList(node)
+    link.append(3)
+    link.append(10)
+    
+    link.append(5)
+    actual = str(link)
+    expected = f'{{ 0 }} -> {{ 3 }} -> {{ 10 }} -> {{ 5 }} -> NULL'
+    assert actual == expected
+
+    
+# add multiple nodes to the end of a linked list -- passes
+def test_insert_many():
+    node = Node(0)
+    link = LinkedList(node)
+
+    actual = str(link.insert_many())
+    expected =  '{ 4 } -> { 3 } -> { 2 } -> { 1 } -> { 0 } -> NULL'
+    assert actual == expected
 
 
 
-###### Fixture for CC05 and CC06  ##########    
+###### Fixture for CC05 ##########    
 @pytest.fixture
 def generate_new_list():
     node = Node(0)

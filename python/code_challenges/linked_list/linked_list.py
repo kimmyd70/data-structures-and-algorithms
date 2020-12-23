@@ -46,6 +46,7 @@ class LinkedList:
         return False
     
     
+# append(value): insert value at end of list
     def append(self,value):
         new_node = Node(value)
         current = self.head
@@ -59,14 +60,17 @@ class LinkedList:
         current.next = new_node
         return 
     
-    def insert_before(self, value, new_value):
-        new_node = Node(new_value)
+# insert_before(value, newVal): insert newVal before 
+# first instance of value 
+    def insert_before(self, value, newVal):
+        new_node = Node(newVal)
         current = self.head
         
-        # checking for empty list
+        # checking for empty list and puts at the head
         if current is None:
             self.insert(new_node)
             return
+        # inserts after a node matching our search value
         while current.next is not None:
             if current.next.value == value:
                 new_node.next = current.next
@@ -74,24 +78,53 @@ class LinkedList:
             current = current.next    
             return
         
+# insert_after(value, newVal): insert newVal after
+# first instance of value 
+
+######### why does it fail when trying to insert at the end? ########
+
+    def insert_after(self, value, newVal):
+        new_node = Node(newVal)
+        current = self.head
+        
+        # checking for empty list and puts at the head
+        if current is None:
+            self.insert(new_node)
+            return
+        
+        # inserts after a node matching our search value
+        while current is not None:
+            current = current.next    
+            if current.value == value:
+                new_node.next = current.next
+                current.next = new_node
+            return
+
+# function to clear the list
+    def clear_list(self):
+        pass
 
     
 # create Linked List  
     def insert_many(self):
-        new_linked = []
-        current = self.head
+        node = Node(0)
+        new_list = LinkedList(node)
+        list_length = 0
+        
         for value in range(1,5):
-            self.insert(value)
-            new_linked.append(current.value)
-            current = current.next
+            new_list.insert(value)
+            list_length += 1
+        
+        return new_list
 
-        return(new_linked)
-    
-# append(value): insert value at end of list
+        # pass
+        # new_linked = []
+        # for value in range(1,5):
+            # current = self.head
+            # self.insert(value)
+            # new_linked.append(current.value)
+            # current = current.next
+        # return
 
-# insert_before(value, newVal): insert newVal before 
-# first instance of value 
 
-# insert_after(value, newVal): insert newVal after
-# first instance of value 
 
