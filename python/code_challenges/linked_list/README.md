@@ -41,3 +41,7 @@ _____________
 5. Can successfully insert after a node in the middle of the linked list
 
 6. Can successfully insert a node after the last node of the linked list
+
+_________________
+
+![Whiteboard for CC06](./images/cc06-whiteboard.png)
