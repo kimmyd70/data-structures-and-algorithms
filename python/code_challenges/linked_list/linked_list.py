@@ -45,6 +45,7 @@ class LinkedList:
         
         return False
     
+
     
 # append(value): insert value at end of list
     def append(self,value):
@@ -127,4 +128,17 @@ class LinkedList:
         # return
 
 
+
+# create Linked List  
+    def insert_many(self):
+        new_linked = []
+        current = self.head
+        for value in range(1,5):
+            self.insert(value)
+            new_linked.append(current.value)
+            current = current.next
+
+        return(new_linked)
+    
+    
 

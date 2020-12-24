@@ -15,9 +15,11 @@ Extend your LinkedList class with:
 
 1. `.append(value)` which adds a new node with the given `value` to the end of the list.
 
-3. `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
 
-4. `.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+2. `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
+
+3. `.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+
 
 __________
 

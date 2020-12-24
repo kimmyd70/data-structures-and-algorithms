@@ -1,10 +1,12 @@
 from linked_list import LinkedList, Node
 import pytest
 
+
 def test_import():
     """ proof of life test passes"""
     assert LinkedList
     assert Node
+
 
 # add a node to the end of the linked list -- passes
 def test_append ():
@@ -73,10 +75,9 @@ def test_insert_many():
     actual = str(link.insert_many())
     expected =  '{ 4 } -> { 3 } -> { 2 } -> { 1 } -> { 0 } -> NULL'
     assert actual == expected
+    
 
 
-
-###### Fixture for CC05 ##########    
 @pytest.fixture
 def generate_new_list():
     node = Node(0)
@@ -87,6 +88,7 @@ def generate_new_list():
         new_list.insert(value)
         list_length += 1
     
+
     return new_list
 
 #########################
