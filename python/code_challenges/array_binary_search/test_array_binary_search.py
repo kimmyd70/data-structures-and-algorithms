@@ -9,17 +9,13 @@ def test_brute_force():
     expected = 1
     assert actual == expected
     
-# def test_brute_force():
-#     actual = brute_force([1,2,6,7,8,9,10],3)
-#     expected = -1
-#     assert actual == expected
 
     
 # # key not in empty array
-# def test_empty():
-#     actual = binary_search([], 2)
-#     expected = -1
-#     assert actual == expected
+def test_empty():
+    actual = binary_search([], 2)
+    expected = -1
+    assert actual == expected
     
 # #  key not in the array (w/values)
 # def test_no_match():
