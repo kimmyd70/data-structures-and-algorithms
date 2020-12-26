@@ -1,47 +1,56 @@
-# Singly Linked List--extended for insertions
+# Singly Linked List--extended for insertions and kth element value
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/49
-This is code challenge 06 of 401-Python (seattle-py-401n2)
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/51
+This is code challenge 07 of 401-Python (seattle-py-401n2)
 
-Developers: Kim Damalas, Amber Falbo, Anthony Beaver, Audrena Vacirca, Robert Carter
+Developers: Kim Damalas
 
-Date: 22 December 2020
+Date: 23 December 2020
 ____________________
 ## Challenge
 
 Use Node class and some testing from Code Challenge 05.
 
-Extend your LinkedList class with:
+Extend your LinkedList class by a method called `kth_from_end()`:
 
-1. `.append(value)` which adds a new node with the given `value` to the end of the list.
+- Write a method for the `LinkedList` class which takes a number, `k`, as a parameter. Return the node’s value that is k from the end of the linked list. 
 
-3. `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
-
-4. `.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+- You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 __________
 
 ## Approach & Efficiency
 
-Approach is using classes and their methods to instantiate, traverse, and manipulate our linked list
+Approach is using classes and their methods to instantiate, traverse, and manipulate our linked list.  It also makes use of previously coded methods in this project.
 
-This function has O(n) time and space efficiency except for adding a node at the head which is O(1)
+Time: O(n) -- worst case assumes if k is 0, we must traverse the entire list
+
+Space: O(1) -- finding and returning a single variable; not making/storing any addiitional lists, etc when executing the method
+
+NOTE:  
+
+>ASSUMPTION MADE in whiteboarding without access to clarifying answers: k is a positive integer or 0 
+
+>BUT, I see testing requires a test of a negative k, so whiteboarding session algorithm will need to be amended 
 
 _____________
 ## Required Testing
 
-1. Can successfully add a node to the end of the linked list
+1. Where k is greater than the length of the linked list
+(raise error)
 
-2. Can successfully add multiple nodes to the end of a linked list
+2. Where k and the length of the list are the same
+(return value of head)
 
-3. Can successfully insert a node before a node located i the middle of a linked list
+3. Where k is not a positive integer
+(raise error or use absolute value of k ??)
 
-4. Can successfully insert a node before the first node of a linked list
+4. Where the linked list is of a size 1
+(k can only be 1 or raise error)
 
-5. Can successfully insert after a node in the middle of the linked list
-
-6. Can successfully insert a node after the last node of the linked list
+5. “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+(any k < list length)
 
 _________________
 
-![Whiteboard for CC06](./images/cc06-whiteboard.png)
+![Whiteboard for CC06](./images/cc07-whiteboard.png)

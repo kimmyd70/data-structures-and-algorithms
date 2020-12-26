@@ -105,7 +105,9 @@ class LinkedList:
         pass
 
     
-# create Linked List  
+# create Linked List with elements: 4,3,2,1
+# method returns tuple with 2 elements: the list dunder string, list_length
+# access return elements by result = list.insert_many() then result[index]
     def insert_many(self):
         node = Node(0)
         new_list = LinkedList(node)
@@ -115,8 +117,25 @@ class LinkedList:
             new_list.insert(value)
             list_length += 1
         
-        return new_list
+        return new_list,list_length
+    
 
 
 
+# finds the value at the kth position from the end
+def kth_from_end(self,k):
+    # node = Node(0)
+    # our_list = LinkedList(node)
+    # our_list.insert_many()
 
+    # list_length = our_list.insert_many()
+    # length = list_length[1]
+    if k > length:
+    # raise exception
+        return 'error'
+    else:
+        target_node = length -k
+        for position in range(0,target_node):
+            target_position = position
+            position += 1
+        return target_position.value

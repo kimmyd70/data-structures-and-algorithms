@@ -5,89 +5,107 @@ def test_import():
     """ proof of life test passes"""
     assert LinkedList
     assert Node
-
-# add a node to the end of the linked list -- passes
-def test_append ():
+    
+    
+# 1. Where k is greater than the length of the linked list (raise error)
+def test_k_greater():
     node = Node(0)
     link = LinkedList(node)
+    link.insert(1)
+    link.insert(2)
+    link.insert(3)
     link.insert(4)
-    link.append(10)
-    actual = str(link)
-    expected = f'{{ 4 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
-    assert actual == expected
+    link.insert(5)
     
-# insert a node before a node located in the middle of a linked list -- passed
-def test_before ():
-    node = Node(0)
-    link = LinkedList(node)
-    link.insert(4)
-    link.append(10)
-    link.insert_before(0,5)
-    actual = str(link)
-    expected = f'{{ 4 }} -> {{ 5 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
-    assert actual == expected
-    
-# insert a node before the first node of a linked list -- passes
-    def test_before_first ():
-        node = Node(0)
-        link = LinkedList(node)
-        link.insert(4)
-        link.append(10)
-        link.insert_before(4,5)
-        actual = str(link)
-        expected = f'{{ 5 }} -> {{ 4 }} ->  {{ 0 }} -> {{ 10 }} -> NULL'
-        assert actual == expected
-
-    
-# insert a node after a node located in the middle of a linked list -- passes
-def test_after ():
-    node = Node(0)
-    link = LinkedList(node)
-    link.append(3)
-    link.append(10)
-    
-    link.insert_after(3,5)
-    actual = str(link)
-    expected = f'{{ 0 }} -> {{ 3 }} -> {{ 5 }} -> {{ 10 }} -> NULL'
-    assert actual == expected
-    
-# insert a node after the last node of the linked list -- passes
-###### how is this not the same as testing the .append function? ######
-def test_after_last ():
-    node = Node(0)
-    link = LinkedList(node)
-    link.append(3)
-    link.append(10)
-    
-    link.append(5)
-    actual = str(link)
-    expected = f'{{ 0 }} -> {{ 3 }} -> {{ 10 }} -> {{ 5 }} -> NULL'
+    actual = link.kth_from_end(7)
+    expected = 'error'
     assert actual == expected
 
+# 2. Where k and the length of the list are the same (return value of head)
+
+# 3. Where k is not a positive integer (raise error or use absolute value of k ??)
+
+# 4. Where the linked list is of a size 1 (k can only be 1 or raise error)
+
+# 5. “Happy Path” where k is not at the end, but somewhere in the middle 
+# of the linked list (any k < list length)
+
+#########################
+## These tests developed for Code Challenge 06 before
+## extending LinkedList with the kth value method##
+########################
+
+
+# # add a node to the end of the linked list -- passes
+# def test_append ():
+#     node = Node(0)
+#     link = LinkedList(node)
+#     link.insert(4)
+#     link.append(10)
+#     actual = str(link)
+#     expected = f'{{ 4 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
+#     assert actual == expected
     
-# add multiple nodes to the end of a linked list -- passes
-def test_insert_many():
-    node = Node(0)
-    link = LinkedList(node)
-
-    actual = str(link.insert_many())
-    expected =  '{ 4 } -> { 3 } -> { 2 } -> { 1 } -> { 0 } -> NULL'
-    assert actual == expected
-
-
-
-###### Fixture for CC05 ##########    
-@pytest.fixture
-def generate_new_list():
-    node = Node(0)
-    new_list = LinkedList(node)
-    list_length = 0
+# # insert a node before a node located in the middle of a linked list -- passed
+# def test_before ():
+#     node = Node(0)
+#     link = LinkedList(node)
+#     link.insert(4)
+#     link.append(10)
+#     link.insert_before(0,5)
+#     actual = str(link)
+#     expected = f'{{ 4 }} -> {{ 5 }} -> {{ 0 }} -> {{ 10 }} -> NULL'
+#     assert actual == expected
     
-    for value in range(1,5):
-        new_list.insert(value)
-        list_length += 1
+# # insert a node before the first node of a linked list -- passes
+#     def test_before_first ():
+#         node = Node(0)
+#         link = LinkedList(node)
+#         link.insert(4)
+#         link.append(10)
+#         link.insert_before(4,5)
+#         actual = str(link)
+#         expected = f'{{ 5 }} -> {{ 4 }} ->  {{ 0 }} -> {{ 10 }} -> NULL'
+#         assert actual == expected
+
     
-    return new_list
+# # insert a node after a node located in the middle of a linked list -- passes
+# def test_after ():
+#     node = Node(0)
+#     link = LinkedList(node)
+#     link.append(3)
+#     link.append(10)
+    
+#     link.insert_after(3,5)
+#     actual = str(link)
+#     expected = f'{{ 0 }} -> {{ 3 }} -> {{ 5 }} -> {{ 10 }} -> NULL'
+#     assert actual == expected
+    
+# # insert a node after the last node of the linked list -- passes
+# ###### how is this not the same as testing the .append function? ######
+# def test_after_last ():
+#     node = Node(0)
+#     link = LinkedList(node)
+#     link.append(3)
+#     link.append(10)
+    
+#     link.append(5)
+#     actual = str(link)
+#     expected = f'{{ 0 }} -> {{ 3 }} -> {{ 10 }} -> {{ 5 }} -> NULL'
+#     assert actual == expected
+
+    
+# # add multiple nodes to the end of a linked list -- passes
+# # method returns tuple with 2 elements: the list dunder string, list_length
+# def test_insert_many():
+#     node = Node(0)
+#     link = LinkedList(node)
+
+#     actual = link.insert_many()
+#     expected =  ('{ 4 } -> { 3 } -> { 2 } -> { 1 } -> { 0 } -> NULL', 4)
+#     assert actual == expected
+
+
 
 #########################
 ## These tests developed for Code Challenge 05 before
@@ -134,3 +152,15 @@ def generate_new_list():
     
 
 
+# ###### Fixture for CC05 ##########    
+# @pytest.fixture
+# def generate_new_list():
+#     node = Node(0)
+#     new_list = LinkedList(node)
+#     list_length = 0
+    
+#     for value in range(1,5):
+#         new_list.insert(value)
+#         list_length += 1
+    
+#     return new_list
