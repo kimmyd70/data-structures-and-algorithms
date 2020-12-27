@@ -1,4 +1,6 @@
 # Binary Search of an Array
+## Pull request: https://github.com/kimmyd70/data-structures-and-algorithms/pull/52
+
 This is code challenge 03 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas 
