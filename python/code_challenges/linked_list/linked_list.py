@@ -45,6 +45,7 @@ class LinkedList:
         
         return False
     
+
     
 # append(value): insert value at end of list
     def append(self,value):
@@ -145,7 +146,7 @@ def kth_from_end(self,k):
         return 'IndexError: k is too big for your list'
     else:
         target_node = length - k
-        
-        
+              
     return value[target_node]
         
+
