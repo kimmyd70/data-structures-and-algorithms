@@ -1,5 +1,5 @@
 
-from array_binary_search import*
+from array_binary_search import brute_force,binary_search
 
 
 # Roger wanted us to do iteration to see difference
@@ -11,7 +11,7 @@ def test_brute_force():
     
 
     
-# # key not in empty array
+# # key not in empty array -- passes
 def test_empty():
     actual = binary_search([], 2)
     expected = -1
