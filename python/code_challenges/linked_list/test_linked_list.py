@@ -1,6 +1,7 @@
-from linked_list import LinkedList, Node
+from linked_list import LinkedList, Node, kth_from_end
 import pytest
 
+#passes
 def test_import():
     """ proof of life test passes"""
     assert LinkedList
@@ -8,6 +9,7 @@ def test_import():
     
     
 # 1. Where k is greater than the length of the linked list (raise error)
+# passes
 def test_k_greater():
     node = Node(0)
     link = LinkedList(node)
@@ -17,18 +19,81 @@ def test_k_greater():
     link.insert(4)
     link.insert(5)
     
-    actual = link.kth_from_end(7)
-    expected = 'error'
+    actual = kth_from_end(link,7)
+    expected = 'IndexError: k is too big for your list'
     assert actual == expected
 
 # 2. Where k and the length of the list are the same (return value of head)
+# passes
+def test_k_equal():
+    node = Node(0)
+    link = LinkedList(node)
+    link.append(1)
+    link.append(2)
+    link.append(3)
+    link.append(4)
+    link.append(5)
+    
+    actual =  kth_from_end(link,6)
+    expected = 0
+    assert actual == expected
+
 
 # 3. Where k is not a positive integer (raise error or use absolute value of k ??)
+# passes
+def test_k_not_positive():
+    node = Node(0)
+    link = LinkedList(node)
+    link.append(1)
+    link.append(2)
+    link.append(3)
+    link.append(4)
+    link.append(5)
+    
+    actual =  kth_from_end(link,-6)
+    expected = 'error: k is not positive integer'
+    assert actual == expected
+
 
 # 4. Where the linked list is of a size 1 (k can only be 1 or raise error)
+# passes
+def test_list_size_one():
+    node = Node(0)
+    link = LinkedList(node)
+    
+    actual =  kth_from_end(link,1)
+    expected = 0
+    assert actual == expected
+
+# passes
+def test_list_size_one_k_error():
+    node = Node(0)
+    link = LinkedList(node)
+    
+    actual =  kth_from_end(link,3)
+    expected = 'IndexError: k is too big for your list'
+    assert actual == expected
+
 
 # 5. “Happy Path” where k is not at the end, but somewhere in the middle 
 # of the linked list (any k < list length)
+# passes
+def test_any_k():
+    node = Node(0)
+    link = LinkedList(node)
+    link.append(7)
+    link.append(2)
+    link.append(9)
+    link.append(4)
+    link.append(0)
+    
+    actual = kth_from_end(link,3)
+    
+    expected = 9
+    assert actual == expected
+
+
+
 
 #########################
 ## These tests developed for Code Challenge 06 before

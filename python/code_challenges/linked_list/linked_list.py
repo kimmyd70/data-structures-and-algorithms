@@ -124,18 +124,28 @@ class LinkedList:
 
 # finds the value at the kth position from the end
 def kth_from_end(self,k):
-    # node = Node(0)
-    # our_list = LinkedList(node)
-    # our_list.insert_many()
+    length = 0
+    index = []
+    value = []
+    current = self.head
+    
+    k_type = isinstance(k,int)
+        
+    while current is not None:
+        index.append(length)
+        value.append(current.value)
+        length += 1
+        current = current.next
 
-    # list_length = our_list.insert_many()
-    # length = list_length[1]
+    if k < 0 or not k_type:
+        return 'error: k is not positive integer'
+        
     if k > length:
     # raise exception
-        return 'error'
+        return 'IndexError: k is too big for your list'
     else:
-        target_node = length -k
-        for position in range(0,target_node):
-            target_position = position
-            position += 1
-        return target_position.value
+        target_node = length - k
+        
+        
+    return value[target_node]
+        
