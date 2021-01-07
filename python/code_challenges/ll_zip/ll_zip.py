@@ -66,10 +66,17 @@ class LinkedList:
             return error
 
         
-        while list1 or list2:
-            
+        length1 = len(list1)
+        length2 = len(list2)
         
+        # happy path with lists the same length
+        
+        while list1 or list2:
+            if length1 == length2:
+                for item in range(0,length1):
+                    list1.insert_after(list1[item].value,list2[item].value)        
             return head1
+
     
     # whiteboard flow
     
