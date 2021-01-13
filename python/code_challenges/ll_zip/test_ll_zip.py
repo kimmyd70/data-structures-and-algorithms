@@ -18,14 +18,14 @@ def test_empty():
     expected = 'Cannot zip two empty lists'
     assert actual == expected
     
-#passes
+#
 def test_happy(generate_new_list,generate_new_list2):
     """ test 2 lists of equal length """
     actual = zip_lists(generate_new_list,generate_new_list2)
     expected = generate_new_list.head
     assert actual == expected
     
-#passes    
+#   
 def test_first_empty(generate_new_list2):
     """ test list 1 is empty """
     L1 = []
@@ -33,7 +33,7 @@ def test_first_empty(generate_new_list2):
     expected = generate_new_list2.head
     assert actual == expected
     
-#passes    
+#    
 def test_second_empty(generate_new_list):
     """ test list 1 is empty """
     L2 = []
