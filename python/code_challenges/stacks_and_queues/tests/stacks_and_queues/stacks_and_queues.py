@@ -29,10 +29,35 @@ class Stack():
         return self.top.value
     
     def is_empty(self):
-        
         return self.top == None
     
 class Queue():
     def __init__(self):
         self.front = None
         self.rear = None
+        
+    def q_is_empty(self):
+        return self.front == None
+
+        
+    def enqueue(self, value = None):
+        node = Node(value)
+        if self.q_is_empty():
+            # assign new node to both front and back if empty Q
+            self.front = node
+            self.rear = node
+        else:    
+            self.rear.next = node
+            self.rear = node
+        
+    def dequeue(self, value = None):
+        if self.q_is_empty():
+            raise InvalidOperationError("Not allowed on empty structure")
+        node = self.front
+        self.front = self.front.next
+        return node.value
+
+    def q_peek(self):
+        if self.q_is_empty():
+            raise InvalidOperationError("Not allowed on empty structure")
+        return self.front.value

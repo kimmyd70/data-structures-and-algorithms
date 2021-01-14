@@ -1,98 +1,83 @@
 import pytest
-from stacks_and_queues.stacks_and_queues import Stack, InvalidOperationError
+from stacks_and_queues.stacks_and_queues import Queue, InvalidOperationError
 
-# 
-# Can successfully instantiate an empty queue
+# passes
 # Can successfully enqueue into a queue
-def test_push_onto_empty():
-    s = Stack()
-    s.push("apple")
-    actual = s.top.value
-    expected = "apple"
-    assert actual == expected
-
-# 
-# Can successfully enqueue multiple values into a queue
-def test_push_onto_full():
-    s = Stack()
-    s.push("apple")
-    s.push("banana")
-    s.push("cucumber")
-    actual = s.top.value
-    expected = "cucumber"
-    assert actual == expected
-
-# 
-# Can successfully dequeue out of a queue the expected value
-def test_pop_single():
-    s = Stack()
-    s.push("apple")
-    actual = s.pop()
+def test_enqueue_onto_empty():
+    q = Queue()
+    q.enqueue("apple")
+    actual = q.front.value
     expected = "apple"
     assert actual == expected
 
 # passes
-def test_pop_some():
-    s = Stack()
-
-    s.push("apple")
-    s.push("banana")
-    s.push("cucumber")
-
-    s.pop()
-
-    actual = s.pop()
-    expected = "banana"
-
+# Can successfully enqueue multiple values into a queue
+def test_enqueue_onto_full():
+    q = Queue()
+    q.enqueue("apple")
+    q.enqueue("banana")
+    q.enqueue("cucumber")
+    actual = q.front.value
+    expected = "apple"
     assert actual == expected
+
+# passes
+# Can successfully dequeue out of a queue the expected value
+def test_dequeue_single():
+    q = Queue()
+    q.enqueue("apple")
+    actual = q.dequeue()
+    expected = "apple"
+    assert actual == expected
+
 
 #passes
 def test_check_not_empty():
-    s = Stack()
-    s.push("apple")
-    s.push("banana")
-    actual = s.is_empty()
+    q = Queue()
+    q.enqueue("apple")
+    q.enqueue("banana")
+    actual = q.q_is_empty()
     expected = False
     assert actual == expected
 
-#   
+# passes
 # Can successfully empty a queue after multiple dequeues
-def test_pop_until_empty():
-    s = Stack()
-    s.push("apple")
-    s.push("banana")
-    s.push("cucumber")
-    s.pop()
-    s.pop()
-    s.pop()
-    actual = s.is_empty()
+def test_dequeue_until_empty():
+    q = Queue()
+    q.enqueue("apple")
+    q.enqueue("banana")
+    q.enqueue("cucumber")
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    actual = q.q_is_empty()
     expected = True
     assert actual == expected
 
 # 
 # Can successfully peek into a queue, seeing the expected value
-def test_peek():
-    s = Stack()
-    s.push("apple")
-    s.push("banana")
-    actual = s.peek()
-    expected = "banana"
+def test_q_peek():
+    q = Queue()
+    q.enqueue("apple")
+    q.enqueue("banana")
+    actual = q.q_peek()
+    expected = "apple"
     assert actual == expected
 
-# 
+# passes
 # Calling dequeue or peek on empty queue raises exception
 def test_peek_empty():
-    s = Stack()
+    q = Queue()
     with pytest.raises(InvalidOperationError) as e:
-        s.peek()
+        q.q_peek()
 
     assert str(e.value) == "Not allowed on empty structure"
 
-#
+# passes
 # Calling dequeue or peek on empty queue raises exception
-def test_pop_empty():
-    s = Stack()
+def test_dequeue_empty():
+    q = Queue()
     with pytest.raises(InvalidOperationError) as e:
-        s.pop()
+        q.dequeue()
 
     assert str(e.value) == "Not allowed on empty structure"
