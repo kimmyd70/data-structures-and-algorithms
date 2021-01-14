@@ -1,12 +1,7 @@
-from stacks_and_queues import __version__
 import pytest
-from stacks_and_queues.stacks_and_queues import Stack
+from stacks_and_queues.stacks_and_queues import Stack, InvalidOperationError
 
-# proof of life
-def test_version():
-    assert __version__ == '0.1.0'
-    
-
+# passes
 def test_push_onto_empty():
     s = Stack()
     s.push("apple")
@@ -14,7 +9,7 @@ def test_push_onto_empty():
     expected = "apple"
     assert actual == expected
 
-
+# passes
 def test_push_onto_full():
     s = Stack()
     s.push("apple")
@@ -24,7 +19,7 @@ def test_push_onto_full():
     expected = "cucumber"
     assert actual == expected
 
-
+# passes
 def test_pop_single():
     s = Stack()
     s.push("apple")
@@ -32,7 +27,7 @@ def test_pop_single():
     expected = "apple"
     assert actual == expected
 
-
+# passes
 def test_pop_some():
     s = Stack()
 
@@ -47,7 +42,7 @@ def test_pop_some():
 
     assert actual == expected
 
-
+#passes
 def test_check_not_empty():
     s = Stack()
     s.push("apple")
@@ -55,7 +50,8 @@ def test_check_not_empty():
     actual = s.is_empty()
     expected = False
     assert actual == expected
-    
+
+#passes    
 def test_pop_until_empty():
     s = Stack()
     s.push("apple")
@@ -68,7 +64,7 @@ def test_pop_until_empty():
     expected = True
     assert actual == expected
 
-
+# passes
 def test_peek():
     s = Stack()
     s.push("apple")
@@ -77,18 +73,18 @@ def test_peek():
     expected = "banana"
     assert actual == expected
 
-
+# passes
 def test_peek_empty():
     s = Stack()
     with pytest.raises(InvalidOperationError) as e:
         s.peek()
 
-    assert str(e.value) == "Method not allowed on empty collection"
+    assert str(e.value) == "Not allowed on empty structure"
 
-
+#passes
 def test_pop_empty():
     s = Stack()
     with pytest.raises(InvalidOperationError) as e:
         s.pop()
 
-    assert str(e.value) == "Method not allowed on empty collection"
+    assert str(e.value) == "Not allowed on empty structure"
