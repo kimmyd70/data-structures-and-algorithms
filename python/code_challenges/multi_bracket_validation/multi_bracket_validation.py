@@ -1,4 +1,4 @@
-def bracket_check(string:str)->bool
+def bracket_check(string:str)->bool:
     #create empty dictionary
     
     #check for '' with if and len(string)
