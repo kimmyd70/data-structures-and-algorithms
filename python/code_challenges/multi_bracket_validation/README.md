@@ -1,46 +1,46 @@
-# Queues With Stacks
+# Multi-Bracket Validation
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/55
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/57
 
-This is code challenge 11 of 401-Python (seattle-py-401n2)
+This is code challenge 13 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas
 
-Date: 13 January 2021
+Date: 18 January 2021
 ____________________
 ### Challenge 
 
-1. Create a brand new `PseudoQueue` class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
+1. Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
 
-- enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach
+Round Brackets : ()
 
-- dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach
+Square Brackets : []
 
-- The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation
-
-- Instantiate these Stack objects in your PseudoQueue constructor
+Curly Brackets : {}
 __________
 
 ## Approach & Efficiency
 
-Approach is using classes and their methods to instantiate and manipulate our stacks and queues.  
+Approach is using a dictionary, comparison `if` statements and looping as laid out on **Whiteboard** below
 
-Time: O(n) -- worst case assumes  we must traverse the entire list
 
-Space: O(1) -- adding or removing from stack or queue, peek, and is_empty method.
+Time: O(1) -- traverse the entire string and manipulate a directory
+
+Space: O(1) -- not adding, removing, or changing anything in the input string
 
 _____________
 ## Required Testing
 
-1. Can successfully enqueue into an empty PseudoQueue
+1. Can successfully validate and return `True` for matched brackets of:
+    - Round
+    - Square
+    - Curly
+   
+2. Can successfully return `False` for opening bracket without closing bracket
 
-2. Can successfully dequeue out of a queue the expected value
+3. Can successfully return `False` for closing bracket without opening bracket
 
-3. Can successfully instantiate an empty PseudoQueue
-
-4. Calling dequeue on empty queue raises exception
-
-
+4. Can successfully return `False` for opening bracket and closing brackets of different types
 _________________
 
-![Whiteboard](./assets/queues-with-stacks-whiteboard.png)
+![Whiteboard](./assets/multi-bracket-validation-whiteboard.png)
