@@ -1,3 +1,4 @@
+
 def bracket_check(string:str)->bool:
     """function takes in a string and returns boolean True if brackets are 
     balanced, False if not"""
