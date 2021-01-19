@@ -9,6 +9,8 @@ _____________________
 [Challenge 02: Array Shift](./python/code_challenges/array_shift)
 
 [Challenge 03: Array Binary Search](./python/code_challenges/array_binary_search)
+
+[Challenge 13: Multi Bracket Validation](./python/code_challenges/multi_bracket_validation)
 _________________________
 
 ### Folder and Challenge Setup instructions from CF
