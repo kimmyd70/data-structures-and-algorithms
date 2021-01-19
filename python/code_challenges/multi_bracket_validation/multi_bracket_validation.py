@@ -13,28 +13,27 @@ def bracket_check(string:str)->bool:
     if string_length == 0:
         return True
     #read string via loop for char in len(string)
-    for char in string_length:
+    for char in range(string_length):
         #if close found first, break loop and return False
-        if char == ")" or char == "]" or char == "}" and brackets.ro == 0 and 
-        brackets.so == 0 and brackets.co == 0:
+        if char == ")" or char == "]" or char == "}" and brackets["ro"] == 0 and brackets["so"] == 0 and brackets["co"] == 0:
             return False
         #compare char == opening bracket with 3x if
         # #if found, update dictionary
         if char == "(":
-            brackets.ro +=1
+            brackets["ro"] +=1
         elif char == "[":
-            brackets.so +=1
+            brackets["so"] +=1
         elif char == "{":
-            brackets.co +=1
+            brackets["co"] +=1
         #when cooresponding close found decrease open dictionary -1
         elif char == ")":
-            brackets.ro -=1
+            brackets["ro"] -=1
         elif char == "]":
-            brackets.so -=1
+            brackets["so"] -=1
         elif char == "}":
-            brackets.co -=1
+            brackets["co"] -=1
             
-        #return True if count for all keys is 0
-        if brackets.ro == 0 and brackets.so == 0 and brackets.co == 0:
-            return True
+    #return True if count for all keys is 0
+    if brackets["ro"] == 0 and brackets["so"] == 0 and brackets["co"] == 0:
+        return True
         
