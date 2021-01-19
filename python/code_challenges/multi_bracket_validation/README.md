@@ -43,4 +43,6 @@ _____________
 4. Can successfully return `False` for opening bracket and closing brackets of different types
 _________________
 
+
 ![Whiteboard](./assets/multi-bracket-validation-whiteboard.png)
+

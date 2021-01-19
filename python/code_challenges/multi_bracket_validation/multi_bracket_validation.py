@@ -1,3 +1,4 @@
+
 def bracket_check(string:str)->bool:
     """function takes in a string and returns boolean True if brackets are 
     balanced, False if not"""
@@ -8,10 +9,10 @@ def bracket_check(string:str)->bool:
         "co" : 0
     }
     
-    #check for '' with if and len(string); return True because no brackets == balanced
+    #check for '' with if and len(string); return True because no brackets == balanced; parse string
     string_length = len(string)
     char_list =[char for char in string]
-    print(char_list)
+    
     if string_length == 0:
         return True
     #if close found first, break loop and return False
@@ -43,4 +44,5 @@ def bracket_check(string:str)->bool:
         return True
     else:
         return False
-        
+
+
