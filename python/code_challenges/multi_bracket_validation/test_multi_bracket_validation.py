@@ -11,25 +11,25 @@ def test_empty_string():
     expected = True
     assert actual == expected
 
-#
+# passes
 def test_basic_string():
     actual = bracket_check('()[]{}')
     expected = True
     assert actual == expected
     
-# 
+# passes
 def test_balanced_string():
     actual = bracket_check('(aslj(l;al))[yes]')
     expected = True
     assert actual == expected
     
-# 
+# passes
 def test_string_with_spaces():
     actual = bracket_check('(  )wr[pu]')
     expected = True
     assert actual == expected
 
-# 
+# passes
 def test_unbalanced_string1():
     actual = bracket_check('(')
     expected = False

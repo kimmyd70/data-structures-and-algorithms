@@ -14,12 +14,12 @@ def bracket_check(string:str)->bool:
     print(char_list)
     if string_length == 0:
         return True
+    #if close found first, break loop and return False
+    if char_list[0] == ")" or char_list[0] == "]" or char_list[0] == "}" and brackets["ro"] == 0 and brackets["so"] == 0 and brackets["co"] == 0:
+        return False
     #read string via loop for char in len(string)
     for char in char_list:
         print(char)
-        #if close found first, break loop and return False
-        if char == ")" or char == "]" or char == "}" and brackets["ro"] == 0 and brackets["so"] == 0 and brackets["co"] == 0:
-            return False
         #compare char == opening bracket with 3x if
         # #if found, update dictionary
         if char == "(":
