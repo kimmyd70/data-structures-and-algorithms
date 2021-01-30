@@ -1,48 +1,53 @@
 # Tree Implementation
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/57
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/58
 
-This is code challenge 13 of 401-Python (seattle-py-401n2)
+This is code challenge 15 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas
 
-Date: 18 January 2021
+Date: 30 January 2021
 ____________________
 ### Challenge 
 
-1. Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+1. Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 
-Round Brackets : ()
+2. Create a BinaryTree class
 
-Square Brackets : []
+    - Define a method for each of the depth first traversals called `preOrder`, `inOrder`, and `postOrder` which returns an array of the values, ordered appropriately.
 
-Curly Brackets : {}
+3. Create a BinarySearchTree class
+
+    - Define a method named `add` that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+
+    - Define a method named `contains` that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+4. Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 __________
 
 ## Approach & Efficiency
 
-Approach is using a dictionary, comparison `if` statements and looping as laid out on **Whiteboard** below
+Approach is using Nodes, Classes, and Class methods as described above
 
 
-Time: O(1) -- traverse the entire string and manipulate a directory
+Time:   O(n) -- traverse the entire tree or inserting a node
+        O(log n)-- if binary tree perfectly balanced
 
-Space: O(1) -- not adding, removing, or changing anything in the input string
+Space:  O(width) -- max width
+        2^((log n)-1) -- perfectly balanced tree
+        O(1) -- for binary search
 
 _____________
 ## Required Testing
 
-1. Can successfully validate and return `True` for matched brackets of:
-    - Round
-    - Square
-    - Curly
-   
-2. Can successfully return `False` for opening bracket without closing bracket
+1. Can successfully instantiate an empty tree
+2. Can successfully instantiate a tree with a single root node
+3. Can successfully add a left child and right child to a single root node
+4. Can successfully return a collection from a preorder traversal
+5. Can successfully return a collection from an inorder traversal
+6. Can successfully return a collection from a postorder traversal
 
-3. Can successfully return `False` for closing bracket without opening bracket
-
-4. Can successfully return `False` for opening bracket and closing brackets of different types
 _________________
 
 
-![Whiteboard](./assets/multi-bracket-validation-whiteboard.png)
 
