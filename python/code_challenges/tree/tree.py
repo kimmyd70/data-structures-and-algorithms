@@ -15,17 +15,17 @@ class BinaryTree:
         
     def __str__(self):
 
-        output_left = ''
-        output_right = ''
+        output_left = []
+        output_right = []
         current = self.root
         while current:
-            output_left += f'{{ {current.value} }} -> '
+            output_left.append(current.value)
             current = current.left
             
         current = self.root
         
         while current:
-            output_right += f'{{ {current.value} }} -> '
+            output_right.append(current.value)
             current = current.right
         return f'BT left: {output_left} and right: {output_right}'
         
@@ -48,34 +48,34 @@ class BinaryTree:
         pass
         
 class BinarySearchTree(BinaryTree):
-    def __init__(self):
-        BinaryTree(self)
+    def __init__(self, root = None):
+        self.root = root
 
     def __str__(self):
 
-        output_left = ''
-        output_right = ''
+        output_left = []
+        output_right = []
         current = self.root
         while current:
-            output_left += f'{{ {current.value} }} ->'
+            output_left.append(current.value)
             current = current.left
             
         current = self.root
         
         while current:
-            output_right += f'{{ {current.value} }} ->'
+            output_right.append(current.value)
             current = current.right
         return f'BST left: {output_left} and right: {output_right}'
         
 
 
-    def add():
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with add operation')
-        pass
+#     def add():
+#         # if not self:
+#         #     raise InvalidOperationError('something went wrong with add operation')
+#         pass
     
-    def contains():
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with post_order operation')
-        pass
+#     def contains():
+#         # if not self:
+#         #     raise InvalidOperationError('something went wrong with post_order operation')
+#         pass
     
