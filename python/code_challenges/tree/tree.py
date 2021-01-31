@@ -14,6 +14,8 @@ class BinaryTree:
 
         
     def __str__(self):
+        """ function used to test instantiation of one-node BT and BST"""
+        # baby steps (TDD)
 
         output_left = []
         output_right = []
@@ -27,55 +29,68 @@ class BinaryTree:
         while current:
             output_right.append(current.value)
             current = current.right
-        return f'BT left: {output_left} and right: {output_right}'
+        return f'left: {output_left} and right: {output_right}'
         
         
-    def pre_order():
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with pre_order operation')
+    def pre_order(self, root = None):
+        """ function prints root then left traverse """
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not root:
+            raise InvalidOperationError('your tree is empty')
+            return
+        
+        def traverse(root):
+            print(root.value)
+            if root.left:
+                traverse(root.left)
+            
+            if root.right:
+                traverse(root.right)
+        traverse(self.root)
 
         pass
     
-    def in_order():
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with in_order operation')
+    def in_order(self, root = None):
+        """ function left traverse then prints root  """
+        
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not root:
+            raise InvalidOperationError('your tree is empty')
+            return
+        
+        def traverse(root):
+            if root.left:
+                traverse(root.left)
+            print(root.value)
+            
+            if root.right:
+                traverse(root.right)
+        traverse(self.root)
+        # pass
 
-        pass
-
-    def post_order():
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with post_order operation')
-        pass
+    def post_order(self, root = None):
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not root:
+            raise InvalidOperationError('your tree is empty')
+            return
         
 class BinarySearchTree(BinaryTree):
     def __init__(self, root = None):
         self.root = root
-
-    def __str__(self):
-
-        output_left = []
-        output_right = []
-        current = self.root
-        while current:
-            output_left.append(current.value)
-            current = current.left
-            
-        current = self.root
         
-        while current:
-            output_right.append(current.value)
-            current = current.right
-        return f'BST left: {output_left} and right: {output_right}'
-        
-
-
-#     def add():
-#         # if not self:
-#         #     raise InvalidOperationError('something went wrong with add operation')
-#         pass
+    def add(self, value):
+        # if not self:
+        #     raise InvalidOperationError('something went wrong with add operation')
+        pass
     
-#     def contains():
-#         # if not self:
-#         #     raise InvalidOperationError('something went wrong with post_order operation')
-#         pass
+    def contains(self,value):
+        # if not self:
+        #     raise InvalidOperationError('something went wrong with post_order operation')
+        pass
     

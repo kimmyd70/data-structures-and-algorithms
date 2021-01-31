@@ -17,14 +17,14 @@ def test_create_BST():
 def test_one_node_BT():
     node = Node(7)
     actual = str(BinaryTree(node))
-    expected = 'BT left: [7] and right: [7]'
+    expected = 'left: [7] and right: [7]'
     assert actual == expected
     
 # 2a. Passes--Can successfully instantiate a BinarySearchTree with a single root node
 def test_one_node_BST():
     node = Node(9)
     actual = str(BinarySearchTree(node))
-    expected = 'BST left: [9] and right: [9]'
+    expected = 'left: [9] and right: [9]'
     assert actual == expected
 
 # 3. Can successfully add a left child and right child to a single root node
@@ -54,3 +54,13 @@ def test_one_node_BST():
 
 
 
+@pytest.fixture
+def create_tree():
+    """ instantiate and fill a small BT--see visual in images """
+    tree = BinaryTree(Node(11))
+    tree.root.left = Node(10)
+    tree.root.left.left = Node(9)
+    tree.root.left.right = Node(12)
+    tree.root.right = Node(13)
+    tree.root.right.left = Node(7)
+    tree.root.right.right = Node(15)
