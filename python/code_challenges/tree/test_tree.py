@@ -3,7 +3,7 @@ from tree import BinarySearchTree
 import pytest
 
 
-# 15 tests total
+# 6 passing ; 4 skipping
 
 # 1. Passes--Can successfully instantiate an empty BinaryTree
 def test_create_empty_BT():
@@ -33,7 +33,7 @@ def test_one_node_BST():
     assert actual == expected
     
     
-# 3. ***** Passes with the fixture -- need to code BinarySearchTree.add ******
+# 3. ** Passes with the fixture on BT and BST -- need to code BinarySearchTree.add ***
 # Can successfully add a left child and right child to a single root node
 
 # @pytest.mark.skip("pending")
@@ -50,13 +50,15 @@ def test_letter_fixture(create_letter_tree):
     assert actual == expected
     
 @pytest.mark.skip("pending")
-def test_BT_add_left_kid():
+def test_BST_add_left_kid(create_int_tree):
+    """ test add to left of 15 -- see visual in images """
+    root_value = (create_int_tree.root.right.right.value)
+    actual = root_value # correct root, but 
+    # 59 = TypeError: add() takes from 1 to 3 positional arguments but 4 were given
     
-    actual = BinaryTree.add('a','left','b')
-    expected = 
+    # actual = create_int_tree.add(root_value, 'left', 14).root
+    expected = 15
     assert actual == expected
-
-
 
 @pytest.mark.skip("pending")
 def test_BST_add_right_kid():
@@ -75,24 +77,14 @@ def test_BT_add_both_kids():
     assert actual == expected
     
 
-# 3a. Can successfully add a left child and right child to a single root node
-# ***** Both pass when add is in BT class, but not when add is in  BST class
-# and not smooshed together to add two nodes at once ******
-@pytest.mark.skip("pending")
-def test_BST_add_two_kids():
-    pass
+# 4. Passes with fixture--Can successfully return a collection from a pre_order traversal
 
-
-# 4. Can successfully return a collection from a pre_order traversal
-
-@pytest.mark.skip("pending")
-def test_pre_order():
-    # pre_tree = BinaryTree.add('a','left','b')
-    # pre_tree = BinaryTree.add('b','left','c')
-    # pre_tree = BinaryTree.add('b','right','d')
-    # actual = str(pre_tree.root.left)
-    # expected = 'root:a, left:b, right:None'
-    pass
+# @pytest.mark.skip("pending")
+def test_pre_order(create_letter_tree):
+    tree = create_letter_tree
+    actual = tree.pre_order(tree.root)
+    expected = [11,10,9,12,13,7,15]
+    
 
 # 4.a Can successfully return a True Boolean for BST pre_order search of an input
 
@@ -114,7 +106,7 @@ def test_pre_order():
 
 @pytest.fixture
 def create_int_tree():
-    """ instantiate and fill a small BT--see visual in images """
+    """ instantiate and fill a small BST--see visual in images """
     eleven = Node(11)
     ten = Node(10)
     nine = Node(9)
@@ -130,7 +122,7 @@ def create_int_tree():
     thirteen.right = fifteen
     
     #first sub-tree
-    tree = BinaryTree(eleven)
+    tree = BinarySearchTree(eleven)
     tree.root.left = ten
     tree.root.right = thirteen
   

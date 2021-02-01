@@ -13,12 +13,12 @@ class BinaryTree:
     def __init__(self, root = None):
         self.root = root
         
-    def __str__(self):
-        if not self:
-            raise InvalidOperationError('something went wrong with creating a tree')
-            return
+    # def __str__(self):
+    #     if not self:
+    #         raise InvalidOperationError('something went wrong with creating a tree')
+    #         return
 
-        return str(f'root:{self.root}, left:{self.left.value}, right:{self.right.value}')
+    #     return str(f'root:{self.root}, left:{self.left.value}, right:{self.right.value}')
     
     
     # def add (root, position:str, value):
@@ -110,28 +110,28 @@ class BinarySearchTree(BinaryTree):
         self.root = root
         
         
-    def __str__(self):
-        return str(f'root:{self.root}, left:{self.left}, right:{self.right}')
+    # def __str__(self):
+    #     return str(f'root:{self.root}, left:{self.left}, right:{self.right}')
     
     def add (self, root, position:str, value):
-    #     """ takes in the root value to add node to, the position of new node,
-    #     and new node value """
-    #     if not self:
-    #         raise InvalidOperationError('something went wrong with creating a tree')
-    #         return
-    #     if not root:
-    #         raise InvalidOperationError('your tree is empty')
-    #         return
+        """ takes in the root value to add node to, the position of new node,
+        and new node value """
+        # if not self:
+        #     raise InvalidOperationError('something went wrong with creating a tree')
+        #     return
+        # if not root:
+        #     raise InvalidOperationError('your tree is empty')
+        #     return
 
-    #     if position == 'left':
-    #         right = None
-    #         left = value
-    #     elif position == 'right':
-    #         left = None
-    #         right = value
+        # if position == 'left':
+        #     right = None
+        #     left = value
+        # elif position == 'right':
+        #     left = None
+        #     right = value
         
-    #     new_sub_tree = BinarySearchTree(root, left, right)
-    #     return new_sub_tree
+        # new_sub_tree = BinarySearchTree(Node(root, left, right))
+        # return new_sub_tree
         pass
 
         
