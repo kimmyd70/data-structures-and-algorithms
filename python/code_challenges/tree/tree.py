@@ -50,8 +50,8 @@ class BinaryTree:
             return
         
         def traverse(root):
-            collection.append(root)
-            return(root.value)
+            collection.append(root.value)
+            # return(root.value)
             if root.left:
                 traverse(root.left)
             
@@ -63,6 +63,8 @@ class BinaryTree:
     
     def in_order(self, root = None):
         """ function left traverse then prints root  """
+        collection = []
+
         
         if not self:
             raise InvalidOperationError('something went wrong with creating a tree')
@@ -74,16 +76,22 @@ class BinaryTree:
         def traverse(root):
             if root.left:
                 traverse(root.left)
-            return(root.value)
+            collection.append(root.value)
+
+            # return(root.value)
             
             if root.right:
                 traverse(root.right)
         traverse(self.root)
+        
+        return collection
         
 
     def post_order(self, root = None):
         """ function does left traverse, right traverse, then print root """
 
+        collection = []
+        
         if not self:
             raise InvalidOperationError('something went wrong with creating a tree')
             return
@@ -97,9 +105,12 @@ class BinaryTree:
             
             if root.right:
                 traverse(root.right)
-                
-            return(root.value)
+            collection.append(root.value)
+    
+            # return(root.value)
         traverse(self.root)
+        
+        return collection
 
         
 class BinarySearchTree(BinaryTree):
@@ -151,5 +162,13 @@ class BinarySearchTree(BinaryTree):
         # if not root:
         #     raise InvalidOperationError('your tree is empty')
         #     return
+        
+        # tree = BinarySearchTree()
+        
+        # while root:
+        #     pre_order
+        #     if root == value:
+        #         return True
         pass
+    
     

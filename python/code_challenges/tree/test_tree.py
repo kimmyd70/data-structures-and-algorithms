@@ -83,7 +83,8 @@ def test_BT_add_both_kids():
 def test_pre_order(create_letter_tree):
     tree = create_letter_tree
     actual = tree.pre_order(tree.root)
-    expected = [11,10,9,12,13,7,15]
+    expected = ['a','b','d','e','c','f','g']
+    assert actual == expected
     
 
 # 4.a Can successfully return a True Boolean for BST pre_order search of an input
@@ -95,21 +96,23 @@ def test_pre_order(create_letter_tree):
 # @pytest.mark.skip("pending")
 def test_in_order(create_letter_tree):
     tree = create_letter_tree
-    actual = tree.pre_order(tree.root)
-    expected = [11,10,9,12,13,7,15]
+    actual = tree.in_order(tree.root)
+    expected = ['d','b','e','a','f','c','g']
+    assert actual == expected
 
 
 # 5a. Can successfully return a True Boolean for BST in_order search of an input
 
-# @pytest.mark.skip("pending")
-def test_post_order(create_letter_tree):
-    tree = create_letter_tree
-    actual = tree.pre_order(tree.root)
-    expected = [11,10,9,12,13,7,15]
 
 # 5a.1. Can successfully return a False Boolean for BST in_order search of an input
 
 # 6. Can successfully return a collection from a post_order traversal
+# @pytest.mark.skip("pending")
+def test_post_order(create_letter_tree):
+    tree = create_letter_tree
+    actual = tree.post_order(tree.root)
+    expected = ['d','e','b','f','g','c','a']
+    assert actual == expected
 
 # 6a. Can successfully return a True Boolean for BST post_order search of an input
 
