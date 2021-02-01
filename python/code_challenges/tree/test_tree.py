@@ -90,9 +90,22 @@ def test_pre_order(create_letter_tree):
 
 # 4.a.1. Can successfully return a False Boolean for BST pre_order search of an input
 
-# 5. Can successfully return a collection from an inorder traversal
+# 5. Passes with fixture--Can successfully return a collection from an inorder traversal
+
+# @pytest.mark.skip("pending")
+def test_in_order(create_letter_tree):
+    tree = create_letter_tree
+    actual = tree.pre_order(tree.root)
+    expected = [11,10,9,12,13,7,15]
+
 
 # 5a. Can successfully return a True Boolean for BST in_order search of an input
+
+# @pytest.mark.skip("pending")
+def test_post_order(create_letter_tree):
+    tree = create_letter_tree
+    actual = tree.pre_order(tree.root)
+    expected = [11,10,9,12,13,7,15]
 
 # 5a.1. Can successfully return a False Boolean for BST in_order search of an input
 
