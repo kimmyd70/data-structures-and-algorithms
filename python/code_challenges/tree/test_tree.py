@@ -3,7 +3,7 @@ from tree import BinarySearchTree
 import pytest
 
 
-# 9 passing ; 3 skipping (add not working, so tests skipped)
+# 12 passing ; 4 skipping (add and does not contain)
 
 # 1. Passes--Can successfully instantiate an empty BinaryTree
 def test_create_empty_BT():
@@ -87,11 +87,24 @@ def test_pre_order(create_letter_tree):
     assert actual == expected
     
 
-# 4.a Can successfully return a True Boolean for BST pre_order search of an input
+# 4.a Passes -- Can successfully return a True Boolean for BST pre_order search of an input
 
-# 4.a.1. Can successfully return a False Boolean for BST pre_order search of an input
+# @pytest.mark.skip("pending")
+def test_contains_pre_order(create_int_tree):
+    tree = create_int_tree
+    actual = tree.contains(tree.root,'pre_order')
+    expected = True
+    assert actual == expected
 
-# 5. Passes with fixture--Can successfully return a collection from an inorder traversal
+# 4.a.1. ** Can successfully return a False Boolean for BST pre_order search of an input
+@pytest.mark.skip("pending")
+def test_does_not_contain_pre_order(create_int_tree):
+    tree = create_int_tree
+    actual = tree.contains(25,'pre_order')
+    expected = True
+    assert actual == expected
+
+# 5. Passes with fixture--Can successfully return a collection from an in_order traversal
 
 # @pytest.mark.skip("pending")
 def test_in_order(create_letter_tree):
@@ -102,11 +115,17 @@ def test_in_order(create_letter_tree):
 
 
 # 5a. Can successfully return a True Boolean for BST in_order search of an input
+# @pytest.mark.skip("pending")
+def test_contains_in_order(create_int_tree):
+    tree = create_int_tree
+    actual = tree.contains(tree.root,'in_order')
+    expected = True
+    assert actual == expected
 
 
 # 5a.1. Can successfully return a False Boolean for BST in_order search of an input
 
-# 6. Can successfully return a collection from a post_order traversal
+# 6. Passes -- Can successfully return a collection from a post_order traversal
 # @pytest.mark.skip("pending")
 def test_post_order(create_letter_tree):
     tree = create_letter_tree
@@ -114,7 +133,13 @@ def test_post_order(create_letter_tree):
     expected = ['d','e','b','f','g','c','a']
     assert actual == expected
 
-# 6a. Can successfully return a True Boolean for BST post_order search of an input
+# 6a. Passes -- Can successfully return a True Boolean for BST post_order search of an input
+# @pytest.mark.skip("pending")
+def test_contains_post_order(create_int_tree):
+    tree = create_int_tree
+    actual = tree.contains(tree.root,'post_order')
+    expected = True
+    assert actual == expected
 
 # 6a.1. Can successfully return a False Boolean for BST post_order search of an input
 
