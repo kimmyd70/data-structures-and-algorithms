@@ -60,49 +60,46 @@ class BinaryTree:
         traverse(self.root)
         return collection
         
-
-        # pass
     
     def in_order(self, root = None):
-        # """ function left traverse then prints root  """
+        """ function left traverse then prints root  """
         
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with creating a tree')
-        #     return
-        # if not root:
-        #     raise InvalidOperationError('your tree is empty')
-        #     return
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not root:
+            raise InvalidOperationError('your tree is empty')
+            return
         
-        # def traverse(root):
-        #     if root.left:
-        #         traverse(root.left)
-        #     return(root.value)
+        def traverse(root):
+            if root.left:
+                traverse(root.left)
+            return(root.value)
             
-        #     if root.right:
-        #         traverse(root.right)
-        # traverse(self.root)
-        pass
+            if root.right:
+                traverse(root.right)
+        traverse(self.root)
+        
 
     def post_order(self, root = None):
         """ function does left traverse, right traverse, then print root """
 
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with creating a tree')
-        #     return
-        # if not root:
-        #     raise InvalidOperationError('your tree is empty')
-        #     return
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not root:
+            raise InvalidOperationError('your tree is empty')
+            return
         
-        # def traverse(root):
-        #     if root.left:
-        #         traverse(root.left)
+        def traverse(root):
+            if root.left:
+                traverse(root.left)
             
-        #     if root.right:
-        #         traverse(root.right)
+            if root.right:
+                traverse(root.right)
                 
-        #     return(root.value)
-        # traverse(self.root)
-        pass
+            return(root.value)
+        traverse(self.root)
 
         
 class BinarySearchTree(BinaryTree):

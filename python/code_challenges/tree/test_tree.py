@@ -3,7 +3,7 @@ from tree import BinarySearchTree
 import pytest
 
 
-# 6 passing ; 4 skipping
+# 9 passing ; 3 skipping (add not working, so tests skipped)
 
 # 1. Passes--Can successfully instantiate an empty BinaryTree
 def test_create_empty_BT():
