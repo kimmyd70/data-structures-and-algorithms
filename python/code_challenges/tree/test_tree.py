@@ -21,30 +21,36 @@ def test_one_node_BT():
     assert actual == expected
     
 # # 2a. Passes--Can successfully instantiate a BinarySearchTree with a single root node
-# def test_one_node_BST():
-#     actual = str(BinarySearchTree(11))
-#     expected = 11
-#     assert actual == expected
+def test_one_node_BST():
+    actual = str(BinarySearchTree(11))
+    expected = 'root:11, left:None, right:None'
+    assert actual == expected
     
-# 3. ***** Both pass, but need to be smooshed together ******
+# 3. ***** Both pass when add is in BT class, but not when in  BST class
+# and not smooshed together to add two nodes at once ******
 # Can successfully add a left child and right child to a single root node
-def test_BT_add_left_kid():
+
+def test_BST_add_left_kid():
     
-    actual = str(BinaryTree.add_left('a','b'))
+    actual = str(BinarySearchTree.add('a','left','b'))
     expected = 'root:a, left:b, right:None'
     assert actual == expected
 
-def test_BT_add_right_kid():
+
+def test_BST_add_right_kid():
     
-    actual = str(BinaryTree.add_right('a','c'))
+    actual = str(BinarySearchTree.add('a','right','c'))
     expected = 'root:a, left:None, right:c'
     assert actual == expected
     
-# def test_add_both_kids():
+# def test_BT_add_both_kids():
+#     BT = BinaryTree.add('a', 'left' ,'b')
+#     BT.add('a', 'right' ,'c')
     
-#     actual = str(BinaryTree.add_both('a', 'None' ,'b'))
-#     expected = 'root:a, left:None, right:None'
+#     actual = str(BT)
+#     expected = 'root:a, left:b, right:c'
 #     assert actual == expected
+    
 
 # 3a. Can successfully add a left child and right child to a single root node
 # def test_BST_add_two_kids():

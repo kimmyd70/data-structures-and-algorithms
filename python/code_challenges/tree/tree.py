@@ -16,35 +16,20 @@ class BinaryTree:
     def __str__(self):
         return str(f'root:{self.root.value}, left:{self.left.value}, right:{self.right.value}')
     
-    def add_left (root, left = None):
-        """ takes in a root and adds value to left; instantiates a sub-tree"""
-        right = None
-        new_tree_left = BinaryTree(root, left, right)
-        return new_tree_left
+    
+    # def add (root, position:str, value):
+    #     """ takes in the root value to add node to, the position of new node,
+    #     and new node value """
+    #     if position == 'left':
+    #         right = None
+    #         left = value
+    #     elif position == 'right':
+    #         left = None
+    #         right = value
         
-    def add_right (root,right):
-        """ takes in a root and adds value to left; instantiates a sub-tree"""
-        left = None
-        new_tree_right = BinaryTree(root, left, right)
-        return new_tree_right
-
-    # def __str__(self):
-    #     """ function used to test instantiation of one-node BT and BST"""
-    #     # baby steps (TDD)
-
-    #     output_left = []
-    #     output_right = []
-    #     current = self.root
-    #     while current:
-    #         output_left.append(current.value)
-    #         current = current.left
+    #     new_tree = BinaryTree(root, left, right)
+    #     return new_tree
             
-    #     current = self.root
-        
-    #     while current:
-    #         output_right.append(current.value)
-    #         current = current.right
-    #     return f'left: {output_left} and right: {output_right}'
         
         
     def pre_order(self, root = None):
@@ -115,10 +100,26 @@ class BinaryTree:
         
 class BinarySearchTree(BinaryTree):
     def __init__(self, root = None, left = None, right = None):
-        # self.root = root
-        # self.left = left
-        # self.right = right
-        pass
+        self.root = Node(root)
+        self.left = Node(left)
+        self.right = Node(right)
+        
+    def __str__(self):
+        return str(f'root:{self.root.value}, left:{self.left.value}, right:{self.right.value}')
+    
+    def add (self, root, position:str, value):
+        """ takes in the root value to add node to, the position of new node,
+        and new node value """
+        if position == 'left':
+            right = None
+            left = value
+        elif position == 'right':
+            left = None
+            right = value
+        
+        new_tree = BinarySearchTree(root, left, right)
+        return new_tree
+
         
     def add(self, value = None, position = None):
         # """ Input = value:str or integer, position:string)
