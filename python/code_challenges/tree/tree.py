@@ -155,8 +155,8 @@ class BinarySearchTree(BinaryTree):
         # new_node = BinarySearchTree(Node(value), position)
         pass
     
-    def contains(self,value,method):
-        """ takes in the value to be searched and search method string """
+    def contains(self,value):
+        """ takes in the value to be searched; returns boolean """
         if not self:
             raise InvalidOperationError('something went wrong with creating a tree')
             return
@@ -164,22 +164,19 @@ class BinarySearchTree(BinaryTree):
             raise InvalidOperationError('your tree is empty')
             return
         # first root is not a node
-        new_root = Node(self.root)
-        if new_root.value == value:
+        if self.root == value:
             return True
-        else:      
-            while new_root.value:
-                if new_root.value == value:
+        else:
+            def traverse(root, value):
+                
+                if root.value == value:
                     return True
-                #dynamic assignment of method used
-                if method == 'pre_order':
-                    self.pre_order(new_root)
-                elif method == 'post_order':
-                    self.post_order(new_root)
-                elif method == 'in_order':
-                    self.in_order(new_root)
-                else:
-                    raise InvalidOperationError('try again with pre_order, in_order, or post_order argument for method')
+                if root.left:
+                    traverse(root.left, value)
+            
+                if root.right:
+                    traverse(root.right, value)
+            traverse(self.root, value)
         return False
         # pass
     
