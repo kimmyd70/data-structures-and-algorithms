@@ -109,15 +109,16 @@ def test_post_order(create_letter_tree):
 
 # 4.a Passes -- Can successfully return a True Boolean for BST search of an input
 
-@pytest.mark.skip("pending")
-def test_contains(create_int_tree):
-    actual = create_int_tree.contains(11)
+# @pytest.mark.skip("pending")
+def test_contains_root(create_int_tree):
+    tree = create_int_tree
+    actual = tree.contains(11)
     expected = True
     assert actual == expected
 
-# 4.a.1. Can successfully return a False Boolean for BST search of an input
-@pytest.mark.skip("pending")
-def test_does_not_contain_pre_order(create_int_tree):
+# 4.a.1. Passes -- Can successfully return a False Boolean for BST search of an input
+# @pytest.mark.skip("pending")
+def test_does_not_contain(create_int_tree):
     tree = create_int_tree
     actual = tree.contains(25)
     expected = False
@@ -139,7 +140,7 @@ def create_int_tree():
     #sub-trees
     ten.left = nine
     ten.right = twelve
-    thirteen.left = 7
+    thirteen.left = seven
     thirteen.right = fifteen
     
     #first sub-tree

@@ -12,32 +12,7 @@ class Node:
 class BinaryTree:
     def __init__(self, root = None):
         self.root = root
-        
-    # def __str__(self):
-    #     if not self:
-    #         raise InvalidOperationError('something went wrong with creating a tree')
-    #         return
-
-    #     return str(f'root:{self.root}, left:{self.left.value}, right:{self.right.value}')
-    
-    
-    # def add (root, position:str, value):
-    #     """ takes in the root value to add node to, the position of new node,
-    #     and new node value """
-    #     if not root:
-    #         raise InvalidOperationError('your tree is empty')
-    #         return
-    #     if position == 'left':
-    #         right = None
-    #         left = value
-    #     elif position == 'right':
-    #         left = None
-    #         right = value
-        
-    #     new_sub_tree = BinaryTree(root, left, right)
-    #     return new_sub_tree
-            
-        
+                    
         
     def pre_order(self, root = None):
         """ function prints root then left traverse """
@@ -121,41 +96,30 @@ class BinarySearchTree(BinaryTree):
     # def __str__(self):
     #     return str(f'root:{self.root}, left:{self.left}, right:{self.right}')
     
-    def add (self, root, position:str, value):
-        """ takes in the root value to add node to, the position of new node,
-        and new node value """
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with creating a tree')
-        #     return
-        # if not root:
-        #     raise InvalidOperationError('your tree is empty')
-        #     return
-
-        # if position == 'left':
-        #     right = None
-        #     left = value
-        # elif position == 'right':
-        #     left = None
-        #     right = value
+    # def add (self,insert_value):
+    #     """ takes in the value to add NOTE: all BST methods assume use of an ordered tree """
+    #     if not self:
+    #         raise InvalidOperationError('something went wrong with creating a tree')
+    #         return
+    #     if not self.root:
+    #         raise InvalidOperationError('your tree is empty; value added at the root')
+    #         self.root = Node(insert_value)
+    #         return
         
-        # new_sub_tree = BinarySearchTree(Node(root, left, right))
-        # return new_sub_tree
+
+    #     if position == 'left':
+    #         right = None
+    #         left = value
+    #     elif position == 'right':
+    #         left = None
+    #         right = value
+        
+    #     new_sub_tree = BinarySearchTree(Node(root, left, right))
+    #     return new_sub_tree
         pass
 
         
-    def add(self, value = None, position = None):
-        # """ Input = value:str or integer, position:string)
-        #     Output = Node at position with .value = value """
-        # if not self:
-        #     raise InvalidOperationError('something went wrong with creating a tree')
-        #     return
-        # if not root:
-        #     raise InvalidOperationError('your tree is empty')
-        #     return
-        # new_node = BinarySearchTree(Node(value), position)
-        pass
-    
-    def contains(self,value):
+    def contains(self, search_value):
         """ takes in the value to be searched; returns boolean """
         if not self:
             raise InvalidOperationError('something went wrong with creating a tree')
@@ -163,21 +127,24 @@ class BinarySearchTree(BinaryTree):
         if not self.root:
             raise InvalidOperationError('your tree is empty')
             return
-        # first root is not a node
-        if self.root == value:
-            return True
-        else:
-            def traverse(root, value):
-                
-                if root.value == value:
+        def traverse(root, search_value):
+            """ recursive traverse updating root until search_value is found """      
+            # BST has less than on left and greater on right of current root
+            if root:     
+                if root.value == search_value:
                     return True
-                if root.left:
-                    traverse(root.left, value)
+                if search_value < root.value:
+                    return traverse(root.left, search_value)
+                    # skips to recursion to check this root and traverse left 
+                    # subtree at each subsequent root
             
-                if root.right:
-                    traverse(root.right, value)
-            traverse(self.root, value)
-        return False
-        # pass
+                if search_value > root.value:
+                    return traverse(root.right, search_value)
+                    # skips to recursion to check this root and traverse right
+                    # subtree at each subsequent root
+            #exits if there are no subtrees past this
+            return False
+        # recursion until search_value found or all subtrees exhausted
+        return traverse(self.root, search_value)
     
     
