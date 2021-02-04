@@ -3,7 +3,7 @@ from tree import BinarySearchTree
 import pytest
 
 
-# 10 passing ; 4 skipping (add and does not contain)
+# 14 passing 
 
 # 1. Passes--Can successfully instantiate an empty BinaryTree
 def test_create_empty_BT():
@@ -33,7 +33,7 @@ def test_one_node_BST():
     assert actual == expected
     
     
-# 3. ** Passes with the fixture on BT and BST -- need to code BinarySearchTree.add ***
+# 3. ** Passes with the fixture and using BST.add ***
 # Can successfully add a left child and right child to a single root node
 
 # @pytest.mark.skip("pending")
@@ -48,34 +48,26 @@ def test_letter_fixture(create_letter_tree):
     actual = create_letter_tree.root.right.value
     expected = 'c'
     assert actual == expected
+        
+# @pytest.mark.skip("pending")
+# Ashley Casimir taught me about capturing print statements
+def test_bst_add_right_kid(create_int_tree, capsys):
+    create_int_tree.add(16)
+    captured = capsys.readouterr()
+    assert captured.out == "11\n13\n15\n16\n"
     
-@pytest.mark.skip("pending")
-def test_BST_add_left_kid(create_int_tree):
-    """ test add to left of 15 -- see visual in images """
-    root_value = (create_int_tree.root.right.right.value)
-    actual = root_value # correct root, but 
-    # 59 = TypeError: add() takes from 1 to 3 positional arguments but 4 were given
+# @pytest.mark.skip("pending")
+def test_bst_add_left_kid(create_int_tree, capsys):
+    create_int_tree.add(6)
+    captured = capsys.readouterr()
+    assert captured.out == "11\n10\n9\n6\n"
     
-    # actual = create_int_tree.add(root_value, 'left', 14).root
-    expected = 15
-    assert actual == expected
+# @pytest.mark.skip("pending")
+def test_bst_add_duplicate(create_int_tree, capsys):
+    create_int_tree.add(11)
+    captured = capsys.readouterr()
+    assert captured.out == "your tree already contains this value--did not add\n"
 
-@pytest.mark.skip("pending")
-def test_BST_add_right_kid():
-    
-    actual = str(BinaryTree.add('a','right','c'))
-    expected = 'root:a, left:None, right:c'
-    assert actual == expected
-    
-@pytest.mark.skip("pending")
-def test_BT_add_both_kids():
-    BT = BinaryTree.add('a', 'left' ,'b')
-    BT.add('a', 'right' ,'c')
-    
-    actual = str(BT)
-    expected = 'root:a, left:b, right:c'
-    assert actual == expected
-    
 
 # 4. Passes with fixture--Can successfully return a collection from a pre_order traversal
 

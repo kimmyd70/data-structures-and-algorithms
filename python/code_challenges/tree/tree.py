@@ -90,33 +90,53 @@ class BinaryTree:
         
 class BinarySearchTree(BinaryTree):
     def __init__(self, root = None, left = None, right = None):
+        """ NOTE: all BST methods assume use of an ordered tree """
         self.root = root
         
         
     # def __str__(self):
     #     return str(f'root:{self.root}, left:{self.left}, right:{self.right}')
     
-    # def add (self,insert_value):
-    #     """ takes in the value to add NOTE: all BST methods assume use of an ordered tree """
-    #     if not self:
-    #         raise InvalidOperationError('something went wrong with creating a tree')
-    #         return
-    #     if not self.root:
-    #         raise InvalidOperationError('your tree is empty; value added at the root')
-    #         self.root = Node(insert_value)
-    #         return
+    def add (self,insert_value):
+        """ takes in the value to add """
+        if not self:
+            raise InvalidOperationError('something went wrong with creating a tree')
+            return
+        if not self.root:
+            self.root = Node(insert_value)
+            return
         
-
-    #     if position == 'left':
-    #         right = None
-    #         left = value
-    #     elif position == 'right':
-    #         left = None
-    #         right = value
+        def traverse(root, insert_value):
+            """ recursive traverse updating root until search_value is found """      
+            # BST has less than on left and greater on right of current root
+            # if root:     
+            if root.value == insert_value:
+                print ('your tree already contains this value--did not add')
+                return
+            print (root.value)
+                
+            if insert_value < root.value:
+                if root.left:
+                    traverse(root.left, insert_value)
+                    # skips to recursion to check this root and traverse left 
+                    # subtree at each subsequent root
+                else:
+                    # Ashley Casimir taught me about capturing print statements
+                    # also, see testing
+                    root.left = Node(insert_value)
+                    print (root.left.value)
         
-    #     new_sub_tree = BinarySearchTree(Node(root, left, right))
-    #     return new_sub_tree
-        pass
+            if insert_value > root.value:
+                if root.right:
+                    traverse(root.right, insert_value)
+                # skips to recursion to check this root and traverse right
+                # subtree at each subsequent root
+                else:
+                    root.right = Node(insert_value)
+                    print (root.right.value)
+                    
+        # recursion until search_value found or all subtrees exhausted
+        return traverse(self.root, insert_value)
 
         
     def contains(self, search_value):
