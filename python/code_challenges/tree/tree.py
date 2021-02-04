@@ -86,6 +86,28 @@ class BinaryTree:
         traverse(self.root)
         
         return collection
+    
+    ## addition from CC#16
+    def find_maximum_value(self, root=None):
+        if not self.root:
+            return 'your tree is empty'
+
+        maximum = self.root.value
+        
+        def traverse (root):
+            if root.value > maximum:
+                max = root.value
+
+            if root.left:
+                return traverse (root.left)
+
+            if root.right:
+                return traverse (root)
+
+        traverse (self.root)
+
+        return maximum
+
 
         
 class BinarySearchTree(BinaryTree):
