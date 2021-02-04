@@ -4,9 +4,13 @@
 
 This is code challenge 15 of 401-Python (seattle-py-401n2)
 
+Extended with Code Challenge 16 of 401-Python
+(seattle-py-401n2)
+
 Developers: Kim Damalas
 
 Date: 30 January 2021
+Update: 4 February 2021
 ____________________
 ### Challenge 
 
@@ -23,6 +27,10 @@ ____________________
     - Define a method named `contains` that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 4. Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+
+____________
+
+5. UPDATE: 
 __________
 
 ## Approach & Efficiency
