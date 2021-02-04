@@ -1,15 +1,18 @@
 # Tree Implementation
 
+Developer: Kim Damalas
+
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/58
 
 This is code challenge 15 of 401-Python (seattle-py-401n2)
 
+Date: 30 January 2021
+
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/59
+
 Extended with Code Challenge 16 of 401-Python
 (seattle-py-401n2)
 
-Developers: Kim Damalas
-
-Date: 30 January 2021
 Update: 4 February 2021
 ____________________
 ### Challenge 
@@ -30,7 +33,7 @@ ____________________
 
 ____________
 
-5. UPDATE: 
+5. UPDATE: Write an instance method called `find-maximum-value`. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 __________
 
 ## Approach & Efficiency
@@ -45,6 +48,10 @@ Space:  O(width) -- max width
         2^((log n)-1) -- perfectly balanced tree
         O(1) -- for binary search
 
+`find-maximum-value`
+Time: O(n) -- may need to traverse entire tree
+Space: O(1) -- storing one variable and replacing
+
 _____________
 ## Required Testing
 
@@ -55,7 +62,15 @@ _____________
 5. Can successfully return a collection from an inorder traversal
 6. Can successfully return a collection from a postorder traversal
 
+-----------
+No tests required from CC#16 assignment, but write unit test to capture:
+1. happy path
+2. known failure
+3. edge cases (empty tree, one node tree, 3 node tree all same value, negative numbers present; float values will behave the same as int because of python operator defaults)
 _________________
 
+## Whiteboard
 
+CC#16
+![Find Max Value Whiteboard](./images/find-max-value-whiteboard.png)
 
