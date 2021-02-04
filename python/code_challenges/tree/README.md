@@ -1,12 +1,18 @@
 # Tree Implementation
 
+Developers: Kim Damalas
+
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/58
 
 This is code challenge 15 of 401-Python (seattle-py-401n2)
 
-Developers: Kim Damalas
-
 Date: 30 January 2021
+
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/60
+
+This is code challenge 17 of 401-Python (seattle-py-401n2)
+
+Date: 4 Feb 2021
 ____________________
 ### Challenge 
 
@@ -23,6 +29,10 @@ ____________________
     - Define a method named `contains` that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 4. Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+
+----
+6. UPDATE: CC#17: Write a `breadth first` traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
 __________
 
 ## Approach & Efficiency
@@ -37,6 +47,7 @@ Space:  O(width) -- max width
         2^((log n)-1) -- perfectly balanced tree
         O(1) -- for binary search
 
+Breadth first should be same Time/Space above
 _____________
 ## Required Testing
 
@@ -49,5 +60,6 @@ _____________
 
 _________________
 
+No required testing from CC#17 assignment, but test happy path, known failure, and edge cases.
 
 
