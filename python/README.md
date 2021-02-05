@@ -11,6 +11,8 @@ _____________________
 [Challenge 03: Array Binary Search](./python/code_challenges/array_binary_search)
 
 [Challenge 13: Multi Bracket Validation](./python/code_challenges/multi_bracket_validation)
+
+[Challenge 15: Tree Implementation AND Challenge 16: Extend Binary Tree Class](./python/code_challenges/tree)
 _________________________
 
 ### Folder and Challenge Setup instructions from CF
