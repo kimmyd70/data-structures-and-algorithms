@@ -66,5 +66,6 @@ _________________
 
 ## Whiteboard
 
-CC#17
+CC#17--NOTE: after lecture, approach changed from whiteboard idea to using a Queue; algorithm is same/similar but code on whiteboard is not written in "queue speak"
+
 ![Whiteboard for Breadth First](./images/breadth-first-whiteboard.png)
