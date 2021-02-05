@@ -87,6 +87,23 @@ class BinaryTree:
         
         return collection
 
+    def breadth_first(self, root=None):
+    if not self.root:
+            return 'your tree is empty'
+
+    value_list = [ ]
+    def traverse (root):
+        value_list.append(root.value)
+        if root.left:
+            value_list.append(root.left.value)
+
+        if root.right:
+            value_list.append(root.right.value)
+
+        traverse (root.left)
+
+    traverse(self.root)
+    return value_list
         
 class BinarySearchTree(BinaryTree):
     def __init__(self, root = None, left = None, right = None):
