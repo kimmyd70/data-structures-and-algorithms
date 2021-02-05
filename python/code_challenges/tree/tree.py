@@ -91,21 +91,16 @@ class BinaryTree:
     def find_maximum_value(self, root=None):
         if not self.root:
             return 'your tree is empty'
-
-        maximum = self.root.value
+  
+        # using pre_order to traverse and build list
+        list = self.pre_order(self.root)
+        # set max to first list item
+        maximum = list[0]
         
-        def traverse (root):
-            if root.value > maximum:
-                max = root.value
-
-            if root.left:
-                return traverse (root.left)
-
-            if root.right:
-                return traverse (root)
-
-        traverse (self.root)
-
+        # loop through the list and find max
+        for item in list:
+            if item > maximum:
+                maximum = item
         return maximum
 
 

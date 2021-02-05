@@ -1,16 +1,15 @@
 from tree import Node, BinaryTree
 from tree import BinarySearchTree
 import pytest
-# BinaryTree.find_maximum_value = max
 
 
-#  5 tests: 3 passing -- CC#16 >>>>
+#  5 tests passing -- CC#16 >>>>
 # 1. happy path
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_happy_path_max(create_int_tree):
     tree = create_int_tree
     actual = tree.find_maximum_value(tree.root)
-    expected = True
+    expected = 15
     assert actual == expected
 
 # 2. known failure is also empty tree edge case below
@@ -25,7 +24,7 @@ def test_empty_BT_max():
 
 #     - one node tree
 # @pytest.mark.skip("pending")
-def test_one_node_BT_max():
+def test_one_node_max():
     three = Node(3)
     tree = BinaryTree(three)
     actual = tree.find_maximum_value(tree.root)
@@ -45,15 +44,15 @@ def test_three_node_same_BT_max():
     assert actual == expected
 
 #     - negative numbers present
-@pytest.mark.skip("pending")
-def test_three_node_same_BT_max():
+# @pytest.mark.skip("pending")
+def test_three_node_neg_num_max():
     one = Node(-3)
     one.left = Node(-4)
-    one.right = Node(0)
+    one.right = Node(-1)
     
     tree = BinaryTree(one)
     actual = tree.find_maximum_value(tree.root)
-    expected = 3
+    expected = -1
     assert actual == expected
 
 # float values will behave the same as int because of python operator defaults
