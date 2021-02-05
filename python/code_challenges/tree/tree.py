@@ -1,4 +1,4 @@
-from collections import dequeue
+# from collections import dequeue
 # reference https://www.pythoncentral.io/use-queue-beginners-guide/
 
 class InvalidOperationError(BaseException):
@@ -90,28 +90,28 @@ class BinaryTree:
         
         return collection
 
-    def breadth_first(self, front_node=None, action = None):
+    def breadth_first(self, root=None):
         # referenced for iterative queue level-order traversal
         # https://codereview.stackexchange.com/questions/181466/binary-search-tree-bfs-iteratively
         
-        if not front_node:
+        if not self.root:
                 return 'your tree is empty'
 
         items = [] 
 
-        def traverse (front_node, action = None):
+        def traverse (root):
             # passing in action as discussed in class
-            bf_val = dequeue()
             
-            bf_val.enqueue_front(front_node)
-            while bf_val.is_empty() == False:
-                current = bf_val.dequeue_front()
-                action(current.data)
+            
+            items.append(root.value)
+            while bf_val:
+                current = bf_val.pop
+                bf_val(current.value)
             if current.left:
-                bf_val.enqueue_back(current.left)
+                bf_val.append(current.left.value)
 
             if current.right:
-                bf_val.enqueue_back(current.right)
+                bf_val.append(current.right.value)
 
         return items
         

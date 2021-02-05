@@ -4,20 +4,33 @@ import pytest
 
 
 # CC#17 >>>>>>>
+# 1 test passing; 3 skipped
+
 # 1. happy path
-# 2. known failure
+@pytest.mark.skip("pending")
+def test_bf_happy(create_letter_tree):
+    actual = create_letter_tree.breadth_first(create_letter_tree.root)
+    expected = ['a','b','c','d','e','f','g']
+    assert actual == expected
+    
+# 2. known failure same as 
 # 3. edge cases:
 #   - empty tree
+# @pytest.mark.skip("pending")
+def test_empty_breadth():
+    tree = BinaryTree()
+    actual = tree.breadth_first()
+    expected = 'your tree is empty'
+    assert actual == expected
 #   - tree with duplicate numbers
 #   - one node tree
 
 @pytest.mark.skip("pending")
 def test_one_node_breadth_BT():
-    actual = BinaryTree(75).root
-    expected = 75
+    actual = BinaryTree(75).breadth_first
+    expected = [75]
     assert actual == expected
 
-#   - tree with neg numbers
 # floats will exhibit correct behavior using basic python math operators
 
 
