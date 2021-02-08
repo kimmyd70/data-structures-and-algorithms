@@ -22,9 +22,8 @@ def test_empty_breadth():
     actual = tree.breadth_first()
     expected = 'your tree is empty'
     assert actual == expected
-#   - tree with duplicate numbers
+    
 #   - one node tree
-
 @pytest.mark.skip("pending")
 def test_one_node_breadth_BT():
     actual = BinaryTree(75).breadth_first
