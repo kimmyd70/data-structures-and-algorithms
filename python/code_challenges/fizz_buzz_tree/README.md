@@ -21,7 +21,7 @@ ____________________
 
     - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
 
-    - If the value is not divisible by 3 or 5, simply turn the number into a String (my choice: "Neither").
+    - If the value is not divisible by 3 or 5, simply turn the number into a String (ie: value = 7 changes to '7').
 
 3. Return a new tree.
 ____________
