@@ -58,41 +58,30 @@ class LinkedList:
         error = 'Cannot zip two empty lists'
         if list1:
             head1 = list1.head
-            # head2 = list2.head
+            
         elif list2:
-            head1 = list2.head
-            # head2 = list1.head
+            head2 = list2.head
         else:
             return error
 
-        
+        store_next = head2.next
         length1 = len(list1)
         length2 = len(list2)
         
         # happy path with lists the same length
         
-        while list1 or list2:
-            if length1 == length2:
-                for item in range(0,length1):
-                    list1.insert_after(list1[item].value,list2[item].value)        
-            return head1
-
+        while head1:
+            if not head1 or not head2:
+                head2.next = head1.next
+                head1.next = head2
+                return list1
+            else:
+                store_next = store_next.next
+                head2.next = head1.next
+                head1.next = head2
+                
+                head1 = head1.next.next
+                head2 = head2.next
+                
+        return list1
     
-    # whiteboard flow
-    
-#     define a function with 2 args (LL1, LL2)
-# --- set head to LL1 head (assuming not None)
-# --- set head to LL2head (if LL1 is None)
-# -- throw error when given 2 empty lists
-# -- while LL1 or LL2 (is not None)
-
-# --- check lists and compare lengths
-# --- take care of case where one list reaches None: pivot to "append the rest of the other list"
-# --- insert LL2 node after LL1 current node
-# --- return LL1 head pointer
-
-
-# Edge: 2 empty lists -- will fall out of while loops and print an error
-
-
-# ** uses insert_after method already written
