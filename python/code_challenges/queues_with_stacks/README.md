@@ -2,7 +2,7 @@
 
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/55
 
-This is code challenge 11 of 401-Python (seattle-py-401n2)
+This is Code Challenge 11 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas
 
