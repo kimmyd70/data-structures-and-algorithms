@@ -54,34 +54,34 @@ class LinkedList:
         return
 
 
-    def zip_lists(list1,list2):
-        error = 'Cannot zip two empty lists'
-        if list1:
-            head1 = list1.head
-            
-        elif list2:
-            head2 = list2.head
-        else:
-            return error
+    def zip_lists(zip_into,list1):
+        """ zips list1 into zip_into"""
+        
 
-        store_next = head2.next
-        length1 = len(list1)
-        length2 = len(list2)
+        if zip_into.head == None and list1.head == None:
+            return ('cannot zip two empty lists')
+        elif zip_into.head == None:
+            return ('cannot zip into empty list')
+        elif list1.head == None:
+            return ('list 2 empty; list 1 unchanged')
+        else:    
+            current1 = zip_into.head    
+            current2 = list1.head
+
         
-        # happy path with lists the same length
         
-        while head1:
-            if not head1 or not head2:
-                head2.next = head1.next
-                head1.next = head2
-                return list1
-            else:
-                store_next = store_next.next
-                head2.next = head1.next
-                head1.next = head2
-                
-                head1 = head1.next.next
-                head2 = head2.next
-                
-        return list1
+        while current1 != None and current2 != None:
+            # save next pointer
+            temp1_next = current1.next
+            temp2_next = current2.next
+            
+            # make current2 the next of current1--inserts a list1 node
+            current2.next = temp1_next
+            current1.next = current2
+            
+            # update for next iteration
+            current1 = temp1_next
+            current2 = temp2_next
+        return zip_into
     
+    # reference: https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/
