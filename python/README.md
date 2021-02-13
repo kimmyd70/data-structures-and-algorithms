@@ -13,6 +13,16 @@ _____________________
 [Challenge 13: Multi Bracket Validation](./python/code_challenges/multi_bracket_validation)
 
 [Challenge 15: Tree Implementation AND Challenge 16: Extend Binary Tree Class](./python/code_challenges/tree)
+[Challenge 04: Whiteboard interview--no code]
+
+[Challenge 05: Linked List:insert and includes](./python/code_challenges/linked_list)
+
+[Challenge 06: Linked List: append, insert after, insert before](./python/code_challenges/linked_list)
+
+[Challenge 07: Linked List: k-th element](./python/code_challenges/linked_list)
+
+[Challenge 08: Zipped Linked List](./python/code_challenges/ll_zip)
+
 _________________________
 
 ### Folder and Challenge Setup instructions from CF
