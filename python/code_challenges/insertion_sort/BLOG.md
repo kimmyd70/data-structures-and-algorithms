@@ -1,7 +1,10 @@
 ## Insertion Sort
 Code Challenge 26
 
+PR located at: https://github.com/kimmyd70/data-structures-and-algorithms/pull/62
+
 Given the pseudocode below, we'll trace the algorithm given 
+
 ![Insertion Sort Algorithm](./images/code_challenge_26_pseudocode.png)
 
 
