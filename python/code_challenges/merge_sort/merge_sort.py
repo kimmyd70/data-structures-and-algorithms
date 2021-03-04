@@ -9,7 +9,7 @@ def merge_sort(arr):
 
     elif n > 1:
         mid = n//2
-        print(mid)
+        print(f"{mid} mid")
         # for index in range(0,mid):
         #     left.append(arr[index])
         
@@ -18,25 +18,28 @@ def merge_sort(arr):
         
         left = arr[:mid]
         right = arr[mid:]
+        print(f"left {left}")
+        print(f"right {right}")
+
             
         #   sort the left side
         merge_sort(left)
-        print(left)
         #   sort the right side
         merge_sort(right)
-        print(right)
         #   merge the sorted left and right sides together
         merge(left, right, arr)
     
-    return arr
 
 def  merge(left, right, arr):
     i = 0
     j = 0
     k = 0
+        
 
     while i < len(left) and j < len(right):
-        print(i,j,k)
+        print(f"while i,j,k {i,j,k}")
+        print(f" left while {left}")
+        print(f" right while {right}")
         if left[i] <= right[j]:
             arr[k] = left[i]
             i += 1
@@ -45,17 +48,19 @@ def  merge(left, right, arr):
             j += 1
             
         k += 1
-        print(array)
+        print(f"while array {arr}")
+        print(f"i,j,k {i,j,k}")
 
     if i == len(left):
         # set remaining entries in arr to remaining values in right
         for index in range (i,len(right)):
-            arr.append(right[index])
+            arr[index-1] = right[index-1]
     else:
         # set remaining entries in arr to remaining values in left
         for index in range (i,len(left)):
-            arr.append(left[index])
+            arr[index-1] = left[index-1]
 
+    return arr
 
 if __name__ == "__main__":
     array = [8,4,23,42,16,15]
