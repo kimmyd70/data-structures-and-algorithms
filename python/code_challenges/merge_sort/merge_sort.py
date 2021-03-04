@@ -1,5 +1,4 @@
 
-
 def merge_sort(arr):
     n = len(arr)
     left = []
@@ -10,12 +9,15 @@ def merge_sort(arr):
 
     elif n > 1:
         mid = n//2
+        print(mid)
+        # for index in range(0,mid):
+        #     left.append(arr[index])
         
-        for index in range(0,mid):
-            left.append(arr[index])
+        # for index in range(mid,n):
+        #     right.append(arr[index])
         
-        for index in range(mid,n-1):
-            right.append(arr[index])
+        left = arr[:mid]
+        right = arr[mid:]
             
         #   sort the left side
         merge_sort(left)
@@ -34,6 +36,7 @@ def  merge(left, right, arr):
     k = 0
 
     while i < len(left) and j < len(right):
+        print(i,j,k)
         if left[i] <= right[j]:
             arr[k] = left[i]
             i += 1
@@ -42,6 +45,7 @@ def  merge(left, right, arr):
             j += 1
             
         k += 1
+        print(array)
 
     if i == len(left):
         # set remaining entries in arr to remaining values in right

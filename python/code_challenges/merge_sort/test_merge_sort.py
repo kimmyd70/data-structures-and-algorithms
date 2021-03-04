@@ -17,7 +17,7 @@ def test_merge_sort_dupes():
     expected = [4,4,4,5,8,16]
     assert actual == expected
     
-# @pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")  
 def test_merge_sort_empty():
     array = []
     actual = merge_sort(array)
