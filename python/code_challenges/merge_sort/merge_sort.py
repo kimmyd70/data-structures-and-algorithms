@@ -4,8 +4,11 @@ def merge_sort(arr):
     n = len(arr)
     left = []
     right = []
+    if len(arr) == 0:
+        return 'cannot sort an empty array'
 
-    if n > 1:
+
+    elif n > 1:
         mid = n//2
         
         for index in range(0,mid):
@@ -23,6 +26,7 @@ def merge_sort(arr):
         #   merge the sorted left and right sides together
         merge(left, right, arr)
     
+    return arr
 
 def  merge(left, right, arr):
     i = 0
@@ -48,7 +52,6 @@ def  merge(left, right, arr):
         for index in range (i,len(left)):
             arr.append(left[index])
 
-    return arr
 
 if __name__ == "__main__":
     array = [8,4,23,42,16,15]
