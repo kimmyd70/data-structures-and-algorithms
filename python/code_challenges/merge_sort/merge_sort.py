@@ -53,6 +53,7 @@ def  merge(left, right, arr):
         
 
     if i == len(left):
+    # GRRRRR this works except for replacing/mergingthe last number 
  
         # set remaining entries in arr to remaining values in right
         for index in range (i,len(right)-i):
