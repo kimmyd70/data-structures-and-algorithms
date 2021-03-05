@@ -1,7 +1,15 @@
 import pytest
 from merge_sort import *
 
-#### all tests pass ###
+# passes
+# @pytest.mark.skip("pending")  
+def test_merge_sort_empty():
+    array = []
+    actual = merge_sort(array)
+    expected = 'cannot sort an empty array'
+    assert actual == expected
+
+# GRRRRR Not sure why the process stops merging at a certain point 
 
 # @pytest.mark.skip("pending")
 def test_merge_sort_happy():
@@ -17,9 +25,17 @@ def test_merge_sort_dupes():
     expected = [4,4,4,5,8,16]
     assert actual == expected
     
+    
 # @pytest.mark.skip("pending")  
-def test_merge_sort_empty():
-    array = []
+def test_merge_sort_long():
+    array = [4,6,2,4,8,7,1,12,3]
     actual = merge_sort(array)
-    expected = 'cannot sort an empty array'
+    expected = [1,2,3,4,4,6,7,8,12]
+    assert actual == expected
+    
+# @pytest.mark.skip("pending")  
+def test_merge_sort_short():
+    array = [4,6,2]
+    actual = merge_sort(array)
+    expected = [2,4,6]
     assert actual == expected

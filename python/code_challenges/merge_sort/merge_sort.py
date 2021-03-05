@@ -29,6 +29,7 @@ def merge_sort(arr):
         #   merge the sorted left and right sides together
         merge(left, right, arr)
     
+    return arr
 
 def  merge(left, right, arr):
     i = 0
@@ -53,7 +54,8 @@ def  merge(left, right, arr):
         
 
     if i == len(left):
-    # GRRRRR this works except for replacing/mergingthe last number 
+    # GRRRRR Not sure why the process stops merging at a certain point 
+    # Indexing problem, I think
  
         # set remaining entries in arr to remaining values in right
         for index in range (i,len(right)-i):
@@ -63,8 +65,7 @@ def  merge(left, right, arr):
         for index in range (i,len(left)-i):
             arr[index-1] = left[index-1]
 
-    return arr
 
-if __name__ == "__main__":
-    array = [8,4,23,42,16,15]
-    merge_sort(array)
+# if __name__ == "__main__":
+#     array = [8,4,23,42,16,15]
+#     merge_sort(array)
