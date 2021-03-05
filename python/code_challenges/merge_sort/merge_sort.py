@@ -50,14 +50,16 @@ def  merge(left, right, arr):
         k += 1
         print(f"while array {arr}")
         print(f"i,j,k {i,j,k}")
+        
 
     if i == len(left):
+ 
         # set remaining entries in arr to remaining values in right
-        for index in range (i,len(right)):
+        for index in range (i,len(right)-i):
             arr[index-1] = right[index-1]
     else:
         # set remaining entries in arr to remaining values in left
-        for index in range (i,len(left)):
+        for index in range (i,len(left)-i):
             arr[index-1] = left[index-1]
 
     return arr
