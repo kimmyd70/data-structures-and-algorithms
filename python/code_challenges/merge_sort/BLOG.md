@@ -1,4 +1,4 @@
-# Insertion Sort
+# Merge Sort
 Code Challenge 27
 
  PR located at: https://github.com/kimmyd70/data-structures-and-algorithms/pull/63
