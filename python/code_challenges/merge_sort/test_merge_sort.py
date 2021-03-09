@@ -9,7 +9,6 @@ def test_merge_sort_empty():
     expected = 'cannot sort an empty array'
     assert actual == expected
 
-# GRRRRR Not sure why the process stops merging at a certain point 
 
 # @pytest.mark.skip("pending")
 def test_merge_sort_happy():
