@@ -22,12 +22,10 @@ def partition(arr, low, high):
     for j in range(low, high):
         if arr[j] <= pivot:
             i += 1
-            # swap(arr, i, low)
             arr[i], arr[j] = arr[j], arr[i]
 
-    # swap(arr, right, low + 1)
     arr[i+1], arr[high] = arr[high], arr[i+1]
-
+    print(array)
     return (i + 1)
 
     

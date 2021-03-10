@@ -46,29 +46,44 @@ using the Sample Array
 `[8,4,23,42,16,15]`
 ___________________
 
-Step 1: 
+Like merge_sort, this algoritm divides the array into portions and sorts those portions using the `partition` function.  I've chosen to represent the process using the last element as the pivot, but the flexibility built into this method allows any element to be the pivot (vs merge_sort where the sort pivots on the middle point). 
 
+The pivot point is key to the sort in that all smaller elements come before the pivot and larger are placed after the pivot.
+
+You can see the visual here:
+
+![quick sort visual](./quick-sort-visual.png)
+
+Start: 
+
+set pivot point at end of list; set high = n-1 = 5, low = 0
 ____________
 
 ___________________
 
-Step 2: 
+Step 1: 
+
+The algorithm finds values < pivot and swaps arr[2] (pivot) with arr[n-1]
 
 _______________________
 
-Step 3: 
+Step 2: 
+
+Recursively sort left of the pivot
 
 ____________
 
 ___________________
 
-Step 4: 
+Step 3: 
+
+Recursively sort right of the pivot
 ____________
 
 ______________
 ### Efficiency
 Time: O(nlog2n)--
-The second step splits the input array recursively and calls merge() for each half. Since the array is halved until a single element remains, the total number of halving operations performed by this function is log2n. Since merge() is called for each half, we get a total runtime of O(n log2n). 
+The algortihm splits the input array recursively, pivots, and sorts. Since the pivot moves the total number of partition operations performed by this function is log2n. Since quick_sort() is called for each portion each time, we get a total runtime of O(n log2n). 
 
 Space: O(1)--
 No additional space is being created. This list is being sorted in place…keeping the space at constant O(1).
