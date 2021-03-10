@@ -74,4 +74,3 @@ Space: O(1)--
 No additional space is being created. This list is being sorted in place…keeping the space at constant O(1).
 
 
-** (analysis taken directly from [realpython.com](https://realpython.com/sorting-algorithms-python/#the-merge-sort-algorithm-in-python))
