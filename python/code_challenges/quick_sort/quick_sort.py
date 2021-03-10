@@ -1,35 +1,38 @@
 
-def quick_sort(arr, left, right):
-    if left < right:
-        posiition = partition(arr, left, right)
+def quick_sort(arr, low, high):
+    if len(arr) == 0:
+        return 'cannot sort an empty array'
+    
+    if len(arr) == 1:
+        return arr
 
-        quick_sort(arr, left, posiition - 1)
+    if low < high:
+        p = partition(arr, low, high)
 
-        quick_sort(arr, posiition + 1, right)
+        quick_sort(arr, low, p - 1)
+
+        quick_sort(arr, p + 1, high)
 
     return arr
 
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = (low -1)
 
-def partition(arr, left, right):
-    pivot = arr[right]
-    low = left - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            # swap(arr, i, low)
+            arr[i], arr[j] = arr[j], arr[i]
 
-    for i in range(len(arr)):
-        if arr[i] <= pivot:
-            low += 1
-            swap(arr, i, low)
+    # swap(arr, right, low + 1)
+    arr[i+1], arr[high] = arr[high], arr[i+1]
 
-    swap(arr, right, low + 1)
+    return (i + 1)
 
-    return low + 1
-
-
-def swap(arr, i, low):
-    temp = arr[i]
-    arr[i] = arr[low]
-    arr[low] = temp
     
 if __name__ == "__main__":
     array = [8,4,23,42,16,15]
-    quick_sort(array)
-    print(array)
+    n = len(array)
+    quick_sort(array, 0, n-1)
+    print (f'sorted: {array}')
