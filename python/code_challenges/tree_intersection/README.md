@@ -38,6 +38,6 @@ _________________
 
 ## Whiteboard
 
-CC#32
+CC#32--Coming Soon!
 ![Tree intersection Whiteboard](./images/tree-intersection-whiteboard.png)
 
