@@ -39,5 +39,5 @@ _________________
 ## Whiteboard
 
 CC#32--Coming Soon!
-![Tree intersection Whiteboard](./images/tree-intersection-whiteboard.png)
+![Tree intersection Whiteboard](./assets/tree-intersection-whiteboard.png)
 
