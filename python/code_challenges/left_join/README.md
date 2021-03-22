@@ -46,6 +46,6 @@ _________________
 
 ## Whiteboard
 
-CC#33--Coming Soon!
+CC#33
 ![Left Join Whiteboard](./assets/left-join-whiteboard.png)
 
