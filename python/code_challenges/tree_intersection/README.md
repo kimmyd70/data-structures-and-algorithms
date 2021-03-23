@@ -2,7 +2,7 @@
 
 Developer: Kim Damalas
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/66
 
 This is code challenge 32 of 401-Python (seattle-py-401n2)
 
@@ -38,6 +38,6 @@ _________________
 
 ## Whiteboard
 
-CC#32
-![Tree intersection Whiteboard](./images/tree-intersection-whiteboard.png)
+CC#32--Coming Soon!
+![Tree intersection Whiteboard](./assets/tree-intersection-whiteboard.png)
 
