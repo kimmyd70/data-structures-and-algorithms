@@ -38,14 +38,11 @@ Space:  O(n) -- building a return hashtable with as many as n indices and multip
 _____________
 ## Required Testing
 
-No tests required from CC#32 assignment, but write unit test to capture:
-1. happy path
-2. known failure
-3. edge cases (empty tree, one node tree, 3 node tree all same value, negative numbers present; float values will behave the same as int because of python operator defaults)
+No tests required per Roger.  Working code not required.
 _________________
 
 ## Whiteboard
 
-CC#33
+CC#33 (Updated after class discussion)
 ![Left Join Whiteboard](./assets/left-join-whiteboard.png)
 
