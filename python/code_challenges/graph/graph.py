@@ -19,12 +19,21 @@ class Graph:
         adjacencies.append(edge)
 
     def get_node(self):
-        pass
+        if len(self._adjacency_list) == 0:
+            raise ValueError('Graph is Empty')
+        
+        return list(self._adjacency_list)
 
-    def get_neighbor(self):
-        pass
+    def get_neighbor(self, v):
+        # access dictionary for key = v and return adjacency_list[v]
+        if v not in self._adjacency_list:
+            raise KeyError('Vertex not in Graph')
+
+        return self._adjacency_list[v]
 
     def size(self):
+        if len(self._adjacency_list) == 0:
+            raise ValueError('The Graph is Empty')
         return len(self._adjacency_list)
 
 
