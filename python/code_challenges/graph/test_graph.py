@@ -1,5 +1,6 @@
 import pytest
 from graph import Vertex, Graph
+# from testfixtures import should_raise
 
 # passes
 def test_add_node():
@@ -48,6 +49,49 @@ def test_get_collection():
     assert actual == expected
 
 # passes
+def test_get_neighbor_count():
+    graph = Graph()
+    a = graph.add_node('a')
+    b = graph.add_node('b')
+    c = graph.add_node('c')
+    
+    first_edge = graph.add_edge(a,b,6)
+    second_edge = graph.add_edge(b,c,2)
+    third_edge = graph.add_edge(c,a)
+
+    actual = graph.get_neighbor(a)
+    expected = [first_edge]
+    assert actual == expected
+    
+    
+# passes
+def test_get_neighbor_count_fail():
+    graph = Graph()
+    a = graph.add_node('a')
+    b = graph.add_node('b')
+    c = graph.add_node('c')
+    
+    first_edge = graph.add_edge(a,b,6)
+    second_edge = graph.add_edge(b,c,2)
+    third_edge = graph.add_edge(c,a)
+
+    actual = graph.get_neighbor(a)
+    expected = [first_edge, second_edge]
+    assert actual != expected
+
+# passes
+def test_one_node():
+    graph = Graph()
+    a = graph.add_node('a')
+    
+    first_edge = graph.add_edge(a,a,6)
+
+    actual = graph.get_neighbor(a)
+    expected = [first_edge]
+    assert actual == expected
+    
+
+# passes
 def test_size():
     graph = Graph()
     a = graph.add_node('a')
@@ -64,3 +108,10 @@ def test_size_fail():
     expected = 3
     actual = graph.size()
     assert actual != expected
+    
+
+# passes -- this was new to me!
+def test_size_empty():
+    with pytest.raises(ValueError) as e_info:
+        graph = Graph()
+        graph.size()

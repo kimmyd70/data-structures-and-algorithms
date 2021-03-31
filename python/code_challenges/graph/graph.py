@@ -17,6 +17,7 @@ class Graph:
         edge = Edge(end_vertex, weight)
         adjacencies = self._adjacency_list[start_vertex]
         adjacencies.append(edge)
+        return edge
 
     def get_node(self):
         if len(self._adjacency_list) == 0:
