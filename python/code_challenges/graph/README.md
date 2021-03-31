@@ -2,7 +2,7 @@
 
 Developer: Kim Damalas
 
-## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/
+## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/68
 
 This is code challenge 35 of 401-Python (seattle-py-401n2)
 
