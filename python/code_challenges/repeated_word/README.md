@@ -1,4 +1,4 @@
-# Repeated Word (using hash table)
+# Repeated Word -- using hash table
 
 ## PR for this file: https://github.com/kimmyd70/data-structures-and-algorithms/pull/65
 
