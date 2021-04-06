@@ -19,8 +19,8 @@ def test_empty_traverse():
 #    
 def test_one_node():
     graph = Graph()
-    graph.add_node('a')
-    graph.add_edge('a','a')
+    a = graph.add_node('a')
+    graph.add_edge(a,a)
 
     actual = graph.depth_first(a)
     expected = 'nodes in order [a]'
@@ -29,17 +29,17 @@ def test_one_node():
 #    
 def test_small_graph():
     g = Graph()
-    g.add_node(0)
-    g.add_node(1)
-    g.add_node (2)
-    g.add_node (3)
-    g.add_edge(0, 1)
-    g.add_edge(0, 2)
-    g.add_edge(1, 2)
-    g.add_edge(2, 0)
-    g.add_edge(2, 3)
-    g.add_edge(3, 3)
+    a = g.add_node(0)
+    b = g.add_node(1)
+    c = g.add_node (2)
+    d = g.add_node (3)
+    g.add_edge(a, b)
+    g.add_edge(a, c)
+    g.add_edge(b, c)
+    g.add_edge(c, a)
+    g.add_edge(c, d)
+    g.add_edge(d, a)
 
-    actual = graph.depth_first(0)
+    actual = g.depth_first(a)
     expected = 'nodes in order [0,1,2,3]'
     assert actual == expected
