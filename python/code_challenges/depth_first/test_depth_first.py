@@ -1,13 +1,6 @@
 import pytest
 from depth_first import Graph, Vertex, Edge
 
-# g = Graph()
-# g.addEdge(0, 1)
-# g.addEdge(0, 2)
-# g.addEdge(1, 2)
-# g.addEdge(2, 0)
-# g.addEdge(2, 3)
-# g.addEdge(3, 3)
 
 # passes
 def test_empty_graph():
@@ -26,9 +19,27 @@ def test_empty_traverse():
 #    
 def test_one_node():
     graph = Graph()
-    a = graph.add_node('a')
-    first_edge = graph.add_edge(a,a,6)
+    graph.add_node('a')
+    graph.add_edge('a','a')
 
     actual = graph.depth_first(a)
     expected = 'nodes in order [a]'
+    assert actual == expected
+    
+#    
+def test_small_graph():
+    g = Graph()
+    g.add_node(0)
+    g.add_node(1)
+    g.add_node (2)
+    g.add_node (3)
+    g.add_edge(0, 1)
+    g.add_edge(0, 2)
+    g.add_edge(1, 2)
+    g.add_edge(2, 0)
+    g.add_edge(2, 3)
+    g.add_edge(3, 3)
+
+    actual = graph.depth_first(0)
+    expected = 'nodes in order [0,1,2,3]'
     assert actual == expected
