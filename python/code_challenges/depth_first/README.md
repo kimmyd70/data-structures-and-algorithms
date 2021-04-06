@@ -34,7 +34,6 @@ _________________
 
 ## Whiteboard
 
-COMING SOON
 
 ![Whiteboard](./assets/depth-first-whiteboard.png)
 
