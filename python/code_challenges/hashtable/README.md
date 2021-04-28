@@ -29,21 +29,20 @@ _____________
 ## Required Testing
 
 Write unit test to capture:
-1. Adding a key/value to your hashtable results in the value being in the data structure
 
-2. Retrieving based on a key returns the value stored
+- [x] Adding a key/value to your hashtable results in the value being in the data structure
 
-3. Successfully returns null for a key that does not exist in the hashtable
+- [x] Retrieving based on a key returns the value stored
 
-4. Successfully handle a collision within the hashtable
+- [x] Successfully returns null for a key that does not exist in the hashtable
 
-5. Successfully retrieve a value from a bucket within the hashtable that has a collision
+- [x] Successfully handle a collision within the hashtable
 
-6. Successfully hash a key to an in-range value
+- [x] Successfully retrieve a value from a bucket within the hashtable that has a collision
+
+- [x] Successfully hash a key to an in-range value
 
 _________________
 
-## Whiteboard
 
-CC#35 -- no whiteboard for implementation
 

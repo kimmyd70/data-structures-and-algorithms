@@ -3,7 +3,7 @@ from linked_list import LinkedList
 
 class Hashtable:
 
-    def __init__(self, size=1024):
+    def __init__(self, size = 256):
         self._size = size
         self._buckets = size * [None]
 
@@ -24,7 +24,7 @@ class Hashtable:
         
         primed = sum * 19
 
-        index = primed % self.size
+        index = primed % self._size
 
         return index
 
@@ -59,10 +59,10 @@ class Hashtable:
 
         current = current.next
 
-    def contains(self):
-        hashed_key_index = self.hash(key)
+    def contains(self,key):
+        hashed_key_index = self._hash(key)
         
-        if not self.buckets[hashed_key_index]:
+        if not self._buckets[hashed_key_index]:
             return False
         
         return True
