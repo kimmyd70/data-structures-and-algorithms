@@ -1,3 +1,7 @@
-# Data Structures and Algorithms
+# JS Data Structures and Algorithms
 
-## Language: `JavaScript`
+## Languages: `JavaScript` 
+
+______________________
+
+## Challenges located [here](./code-challenges)
